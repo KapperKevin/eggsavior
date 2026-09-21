@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnomyog75eug0" path="res://Assets/Textures/Egg.png" id="2_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(14, 24)
+size = Vector2(16, 24)
 
 [node name="Player" type="CharacterBody2D" unique_id=164894348]
 script = ExtResource("1_cvnsp")
@@ -14,5 +14,5 @@ texture_filter = 1
 texture = ExtResource("2_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122106102]
-position = Vector2(0, 1)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_yf5fn")
