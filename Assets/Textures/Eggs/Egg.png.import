@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhd8a4bd2vjvt"
-path="res://.godot/imported/Shotgun.png-37df715cd98cf5b0b77e94d5146a9df0.ctex"
+uid="uid://bnomyog75eug0"
+path="res://.godot/imported/Egg.png-48238f9ed81323b6d850dea82eda39f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Shotgun.png"
-dest_files=["res://.godot/imported/Shotgun.png-37df715cd98cf5b0b77e94d5146a9df0.ctex"]
+source_file="res://Assets/Textures/Eggs/Egg.png"
+dest_files=["res://.godot/imported/Egg.png-48238f9ed81323b6d850dea82eda39f3.ctex"]
 
 [params]
 

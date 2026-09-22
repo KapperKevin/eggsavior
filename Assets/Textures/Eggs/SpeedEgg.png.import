@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yaycorib5yf5"
-path="res://.godot/imported/DeviousEgg.png-1bbe5613904e1004f4f9e1d5ef0826e1.ctex"
+uid="uid://cwtoedlow4eor"
+path="res://.godot/imported/SpeedEgg.png-199350644fccb67e9d53463f87fd2b91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/DeviousEgg.png"
-dest_files=["res://.godot/imported/DeviousEgg.png-1bbe5613904e1004f4f9e1d5ef0826e1.ctex"]
+source_file="res://Assets/Textures/Eggs/SpeedEgg.png"
+dest_files=["res://.godot/imported/SpeedEgg.png-199350644fccb67e9d53463f87fd2b91.ctex"]
 
 [params]
 

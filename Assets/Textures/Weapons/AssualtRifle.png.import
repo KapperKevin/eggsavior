@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw6pjup4hanv2"
-path="res://.godot/imported/AssualtRifle.png-197e78a5b4cc3ca49151ec9181b42423.ctex"
+path="res://.godot/imported/AssualtRifle.png-5d6bf4c1daebe0674154d14a7d4804ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/AssualtRifle.png"
-dest_files=["res://.godot/imported/AssualtRifle.png-197e78a5b4cc3ca49151ec9181b42423.ctex"]
+source_file="res://Assets/Textures/Weapons/AssualtRifle.png"
+dest_files=["res://.godot/imported/AssualtRifle.png-5d6bf4c1daebe0674154d14a7d4804ca.ctex"]
 
 [params]
 

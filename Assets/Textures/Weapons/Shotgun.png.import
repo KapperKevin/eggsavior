@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ybi4wnpad3b4"
-path="res://.godot/imported/EggFat.png-ac6111221a2725bdf7be06166cf8b69a.ctex"
+uid="uid://dhd8a4bd2vjvt"
+path="res://.godot/imported/Shotgun.png-ee93d8a5fd1e247458a1d12bbea36f0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/EggFat.png"
-dest_files=["res://.godot/imported/EggFat.png-ac6111221a2725bdf7be06166cf8b69a.ctex"]
+source_file="res://Assets/Textures/Weapons/Shotgun.png"
+dest_files=["res://.godot/imported/Shotgun.png-ee93d8a5fd1e247458a1d12bbea36f0c.ctex"]
 
 [params]
 

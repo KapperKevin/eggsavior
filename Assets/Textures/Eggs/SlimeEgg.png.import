@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3aji8oda1wup"
-path="res://.godot/imported/MetalEgg.png-8670cb6269e7e2876be15de048a51d5d.ctex"
+uid="uid://chuykwgntjltw"
+path="res://.godot/imported/SlimeEgg.png-04a47de7e7a38e595920410562e1c66e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/MetalEgg.png"
-dest_files=["res://.godot/imported/MetalEgg.png-8670cb6269e7e2876be15de048a51d5d.ctex"]
+source_file="res://Assets/Textures/Eggs/SlimeEgg.png"
+dest_files=["res://.godot/imported/SlimeEgg.png-04a47de7e7a38e595920410562e1c66e.ctex"]
 
 [params]
 

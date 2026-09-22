@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bb5rneh6xar5c"]
 
 [ext_resource type="Script" uid="uid://ys3d4sntb2b4" path="res://Scenes/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bnomyog75eug0" path="res://Assets/Textures/Egg.png" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://bnomyog75eug0" path="res://Assets/Textures/Eggs/Egg.png" id="2_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(16, 24)
