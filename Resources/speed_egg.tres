@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Egg" format=3 uid="uid://d2tomgu4aubnp"]
+
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/egg.gd" id="1_xvchf"]
+
+[resource]
+script = ExtResource("1_xvchf")
+metadata/_custom_type_script = "uid://dxwlskn8mpbe2"
