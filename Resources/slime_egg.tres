@@ -1,7 +1,14 @@
 [gd_resource type="Resource" script_class="Egg" format=3 uid="uid://bl0rmev8yeisn"]
 
-[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/egg.gd" id="1_3paj3"]
+[ext_resource type="Texture2D" uid="uid://chuykwgntjltw" path="res://Assets/Textures/Eggs/SlimeEgg.png" id="1_8lyn2"]
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/egg.gd" id="2_8bxxq"]
 
 [resource]
-script = ExtResource("1_3paj3")
+script = ExtResource("2_8bxxq")
+egg_name = "Slime Egg"
+egg_sprite = ExtResource("1_8lyn2")
+gold_value = 10
+rep_value = 10
+stat_effect = 15.0
+rarity = 4
 metadata/_custom_type_script = "uid://dxwlskn8mpbe2"
