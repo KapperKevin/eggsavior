@@ -10,4 +10,5 @@ egg_sprite = ExtResource("1_w60sf")
 gold_value = 10
 rep_value = 2
 stat_effect = 5.0
+rarity = 1
 metadata/_custom_type_script = "uid://dxwlskn8mpbe2"
