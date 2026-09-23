@@ -10,4 +10,5 @@ egg_sprite = ExtResource("1_akiom")
 gold_value = 10
 rep_value = 5
 effect_type = 1
+rarity = 2
 metadata/_custom_type_script = "uid://dxwlskn8mpbe2"

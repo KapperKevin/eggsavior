@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cq5at4ktvgple"]
+
+[ext_resource type="Script" uid="uid://bvqkmgqc0pdw3" path="res://Scripts/EggSpawner.gd" id="1_8y1xl"]
+
+[node name="EggSpawnerController" type="Node" unique_id=1120494739]
+script = ExtResource("1_8y1xl")
