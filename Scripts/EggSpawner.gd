@@ -35,7 +35,7 @@ func roll_random_egg() -> Egg:
 			
 	return all_eggs[0]
 	
-# This function triggers when the button is pressed
+# This function triggers when the button is pressed. Temporary Function
 func _on_button_pressed() -> void:
 	var rolled_egg = roll_random_egg()
 	

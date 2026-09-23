@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bb5rneh6xar5c"]
 
 [ext_resource type="Script" uid="uid://ys3d4sntb2b4" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Resource" uid="uid://dv50lx154larp" path="res://Resources/player.tres" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://bnomyog75eug0" path="res://Assets/Textures/Eggs/BasicEgg.png" id="2_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
@@ -8,6 +9,7 @@ size = Vector2(16, 24)
 
 [node name="Player" type="CharacterBody2D" unique_id=164894348]
 script = ExtResource("1_cvnsp")
+stats = ExtResource("2_6t5aa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=236844638]
 texture_filter = 1

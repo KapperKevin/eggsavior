@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 300
+@export var stats: PlayerStats
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,9 +18,9 @@ func movementLoop() -> void:
 	# Set velocity based on direction and speed
 	if direction:
 		#aba
-		velocity = direction * speed
+		velocity = direction * stats.base_player_speed
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, speed)
+		velocity = velocity.move_toward(Vector2.ZERO, stats.base_player_speed)
 	
 	# Move the character
 	move_and_slide()
