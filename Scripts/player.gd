@@ -25,3 +25,8 @@ func movementLoop() -> void:
 	
 	# Move the character
 	move_and_slide()
+
+func collect_egg(egg: Egg) -> void:
+	stats.apply_effect(egg)
+	speed = stats.current_player_speed
+	

@@ -11,7 +11,7 @@
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
 
-[node name="Player" parent="." unique_id=164894348 groups=["player"] instance=ExtResource("1_yv0b8")]
+[node name="Player" parent="." unique_id=164894348 instance=ExtResource("1_yv0b8")]
 
 [node name="Button" type="Button" parent="." unique_id=1427294397]
 offset_left = 518.0

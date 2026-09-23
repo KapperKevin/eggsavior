@@ -3,6 +3,12 @@ extends Node
 
 @export var all_eggs: Array[Egg] = []
 
+#temporary most likely
+@onready var player: CharacterBody2D
+
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
+
 func get_rarity_weight(rarity: Egg.EggRarity) -> int:
 	match rarity:
 		Egg.EggRarity.COMMON:
@@ -42,5 +48,7 @@ func _on_button_pressed() -> void:
 	# Check if we actually got an egg (prevents crashes if the array is empty or broken)
 	if rolled_egg != null:
 		print("Successfully rolled: ", rolled_egg.egg_name)
+		player.stats.apply_effect(rolled_egg)
+		player.speed = player.stats.current_player_speed
 	else:
 		print("Error: No egg was returned from the roll!")

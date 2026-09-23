@@ -9,5 +9,6 @@ egg_name = "Speed Egg"
 egg_sprite = ExtResource("1_arqmd")
 gold_value = 10
 rep_value = 10
-stat_effect = 10.0
+stat_effect = 0.2
+effect = 1
 metadata/_custom_type_script = "uid://dxwlskn8mpbe2"
