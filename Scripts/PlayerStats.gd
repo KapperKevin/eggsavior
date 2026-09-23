@@ -24,6 +24,7 @@ func set_stat_effect(given_egg: Egg) -> void:
 		Egg.EggStatEffect.NONE:
 			print("This Egg has no Stat effect!")
 		Egg.EggStatEffect.SPEED:
+			current_player_speed = current_player_speed + (current_player_speed * given_egg.stat_effect)
 			print("Egg has updated Speed!")
 		Egg.EggStatEffect.DAMAGE:
 			print("Egg has updated Damage!")

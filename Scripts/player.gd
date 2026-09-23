@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 @export var stats: PlayerStats
+var speed: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	speed = stats.current_player_speed
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,9 +19,9 @@ func movementLoop() -> void:
 	# Set velocity based on direction and speed
 	if direction:
 		#aba
-		velocity = direction * stats.base_player_speed
+		velocity = direction * speed
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, stats.base_player_speed)
+		velocity = velocity.move_toward(Vector2.ZERO, speed)
 	
 	# Move the character
 	move_and_slide()
