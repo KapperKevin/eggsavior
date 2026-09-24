@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Egg" format=3 uid="uid://ugsn31a61jwo"]
+
+[ext_resource type="Texture2D" uid="uid://dswjin1urlrnd" path="res://Assets/Textures/Eggs/DevilEgg.png" id="1_ffx0y"]
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/egg.gd" id="2_62pao"]
+
+[resource]
+script = ExtResource("2_62pao")
+egg_name = "Devil Egg"
+egg_sprite = ExtResource("1_ffx0y")
+gold_value = 5
+rep_value = 1
+stat_effect = 15.0
+metadata/_custom_type_script = "uid://dxwlskn8mpbe2"
