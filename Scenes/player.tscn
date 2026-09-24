@@ -27,3 +27,6 @@ shape = SubResource("RectangleShape2D_yf5fn")
 [node name="Reticle" type="Sprite2D" parent="." unique_id=100592310]
 texture_filter = 1
 texture = ExtResource("5_fkybt")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=882766677]
+zoom = Vector2(2, 2)

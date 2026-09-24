@@ -11,3 +11,6 @@ pistol_data = ExtResource("2_ui64p")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=540465906]
 texture_filter = 1
 texture = ExtResource("1_j1qo2")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1435467044]
+position = Vector2(8, -1)
