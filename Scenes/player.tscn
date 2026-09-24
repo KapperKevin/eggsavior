@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://ys3d4sntb2b4" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Resource" uid="uid://dv50lx154larp" path="res://Resources/player.tres" id="2_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://bnomyog75eug0" path="res://Assets/Textures/Eggs/BasicEgg.png" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://bk0hya6uvt76c" path="res://Scenes/pistol.tscn" id="3_vgqql"]
+[ext_resource type="Texture2D" uid="uid://boibs4lcrqj7f" path="res://Assets/Textures/Player/player_chicken.png" id="4_fkybt"]
 [ext_resource type="Texture2D" uid="uid://bkkcwteu01vgd" path="res://Assets/Textures/reticle.png" id="5_fkybt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(16, 24)
+size = Vector2(16, 18)
 
 [node name="Player" type="CharacterBody2D" unique_id=164894348]
 collision_layer = 2
@@ -20,10 +20,10 @@ weapon_scene = ExtResource("3_vgqql")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=236844638]
 texture_filter = 1
-texture = ExtResource("2_vgqql")
+texture = ExtResource("4_fkybt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122106102]
-position = Vector2(0, 2)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Reticle" type="Sprite2D" parent="." unique_id=100592310]

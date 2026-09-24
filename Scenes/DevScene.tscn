@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://b3ymljb5elrok" path="res://Resources/EggResources/devious_egg.tres" id="5_qtj1u"]
 [ext_resource type="Resource" uid="uid://565m88swol7r" path="res://Resources/EggResources/metal_egg.tres" id="6_k2iba"]
 [ext_resource type="Resource" uid="uid://bl0rmev8yeisn" path="res://Resources/EggResources/slime_egg.tres" id="7_k8lcy"]
-[ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/speed_egg.tres" id="8_da1wn"]
+[ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/swift_egg.tres" id="8_da1wn"]
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
 
