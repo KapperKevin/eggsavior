@@ -3,7 +3,10 @@ extends CharacterBody2D
 @export var stats: PlayerStats
 @export var weapon_scene: PackedScene
 
+@onready var reticle_node: Sprite2D = $Reticle
+
 var weapon_spawn_node: Node2D
+var orbit_distance: float = 30.0
 var speed: float
 
 # Called when the node enters the scene tree for the first time.
@@ -13,9 +16,24 @@ func _ready() -> void:
 	if weapon_scene:
 		weapon_spawn_node = weapon_scene.instantiate()
 		add_child(weapon_spawn_node)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#MOVING
 	movementLoop()
+	
+	#GUN ORBIT & DIRECTION
+	var mouse_pos = get_global_mouse_position()
+	var direction = (mouse_pos - global_position).normalized()
+	if weapon_spawn_node:
+		weapon_spawn_node.position = direction * orbit_distance
+		weapon_spawn_node.look_at(mouse_pos)
+		if mouse_pos.x < global_position.x:
+			weapon_spawn_node.scale.y = -1
+		else:
+			weapon_spawn_node.scale.y = 1
+	
+	reticle_node.position = mouse_pos - global_position
 
 func movementLoop() -> void:
 	# Get the input direction from the WASD actions
@@ -35,6 +53,10 @@ func collect_egg(egg: Egg) -> void:
 	stats.apply_effect(egg)
 	speed = stats.current_player_speed
 	
-func shoot() -> void:
-	pass
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot"):
+		fire_weapon()
 	
+func fire_weapon() -> void:
+	weapon_spawn_node.shooting()
+	print("Pew pew pew!")
