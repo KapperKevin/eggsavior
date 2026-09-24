@@ -14,3 +14,11 @@ texture = ExtResource("1_j1qo2")
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1435467044]
 position = Vector2(8, -1)
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1171227571]
+one_shot = true
+
+[node name="ReloadTimer" type="Timer" parent="." unique_id=908169096]
+one_shot = true
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

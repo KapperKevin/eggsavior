@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var gun_pivot: Node2D = $GunPivot
 
 var weapon_spawn_node: Node2D
-var orbit_distance: float = 30.0
+var orbit_distance: float = 20.0
 var speed: float
 
 # Called when the node enters the scene tree for the first time.
@@ -60,4 +60,3 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 func fire_weapon() -> void:
 	weapon_spawn_node.shooting()
-	print("Pew pew pew!")
