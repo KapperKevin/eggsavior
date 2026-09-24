@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var weapon_scene: PackedScene
 
 @onready var reticle_node: Sprite2D = $Reticle
+@onready var gun_pivot: Node2D = $GunPivot
 
 var weapon_spawn_node: Node2D
 var orbit_distance: float = 30.0
@@ -12,10 +13,11 @@ var speed: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	speed = stats.current_player_speed
-	#Equiping Gun
+	#Equiping Guns
 	if weapon_scene:
 		weapon_spawn_node = weapon_scene.instantiate()
-		add_child(weapon_spawn_node)
+		gun_pivot.add_child(weapon_spawn_node)
+		weapon_spawn_node.position = Vector2(orbit_distance, 0)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,15 +26,14 @@ func _process(delta: float) -> void:
 	
 	#GUN ORBIT & DIRECTION
 	var mouse_pos = get_global_mouse_position()
-	var direction = (mouse_pos - global_position).normalized()
-	if weapon_spawn_node:
-		weapon_spawn_node.position = direction * orbit_distance
-		weapon_spawn_node.look_at(mouse_pos)
-		if mouse_pos.x < global_position.x:
+	
+	if gun_pivot:
+		gun_pivot.look_at(mouse_pos)
+		if mouse_pos.x < global_position.x:				
 			weapon_spawn_node.scale.y = -1
 		else:
 			weapon_spawn_node.scale.y = 1
-	
+			
 	reticle_node.position = mouse_pos - global_position
 
 func movementLoop() -> void:

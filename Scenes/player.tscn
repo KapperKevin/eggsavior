@@ -16,6 +16,8 @@ script = ExtResource("1_cvnsp")
 stats = ExtResource("2_6t5aa")
 weapon_scene = ExtResource("3_vgqql")
 
+[node name="GunPivot" type="Node2D" parent="." unique_id=207992903]
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=236844638]
 texture_filter = 1
 texture = ExtResource("2_vgqql")
