@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bk0hya6uvt76c"]
+
+[ext_resource type="Texture2D" uid="uid://cia4rkfoonig2" path="res://Assets/Textures/Weapons/weapon_pistol.png" id="1_j1qo2"]
+[ext_resource type="Script" uid="uid://361ahj7dbmhk" path="res://Scripts/pistol.gd" id="1_v21tj"]
+[ext_resource type="Resource" uid="uid://b7ctaalrdbq20" path="res://Resources/WeaponResources/pistol.tres" id="2_ui64p"]
+
+[node name="Pistol" type="Node2D" unique_id=456000996]
+script = ExtResource("1_v21tj")
+pistol_data = ExtResource("2_ui64p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=540465906]
+texture_filter = 1
+texture = ExtResource("1_j1qo2")

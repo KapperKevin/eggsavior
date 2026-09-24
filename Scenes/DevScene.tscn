@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bb5rneh6xar5c" path="res://Scenes/player.tscn" id="1_yv0b8"]
 [ext_resource type="PackedScene" uid="uid://cq5at4ktvgple" path="res://Scenes/egg_spawner_controller.tscn" id="2_er3k5"]
 [ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/egg.gd" id="3_v4yyn"]
-[ext_resource type="Resource" uid="uid://ugsn31a61jwo" path="res://Resources/devil_egg.tres" id="4_ryche"]
-[ext_resource type="Resource" uid="uid://b3ymljb5elrok" path="res://Resources/devious_egg.tres" id="5_qtj1u"]
-[ext_resource type="Resource" uid="uid://565m88swol7r" path="res://Resources/metal_egg.tres" id="6_k2iba"]
-[ext_resource type="Resource" uid="uid://bl0rmev8yeisn" path="res://Resources/slime_egg.tres" id="7_k8lcy"]
-[ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/speed_egg.tres" id="8_da1wn"]
+[ext_resource type="Resource" uid="uid://ugsn31a61jwo" path="res://Resources/EggResources/devil_egg.tres" id="4_ryche"]
+[ext_resource type="Resource" uid="uid://b3ymljb5elrok" path="res://Resources/EggResources/devious_egg.tres" id="5_qtj1u"]
+[ext_resource type="Resource" uid="uid://565m88swol7r" path="res://Resources/EggResources/metal_egg.tres" id="6_k2iba"]
+[ext_resource type="Resource" uid="uid://bl0rmev8yeisn" path="res://Resources/EggResources/slime_egg.tres" id="7_k8lcy"]
+[ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/speed_egg.tres" id="8_da1wn"]
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
 
