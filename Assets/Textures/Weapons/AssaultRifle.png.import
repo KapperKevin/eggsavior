@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rlfyrb6jkq3d"
-path="res://.godot/imported/EggFat.png-ac6111221a2725bdf7be06166cf8b69a.ctex"
+uid="uid://bw6pjup4hanv2"
+path="res://.godot/imported/AssaultRifle.png-16741135926e05120d4e1f78a3571794.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/EggFat.png"
-dest_files=["res://.godot/imported/EggFat.png-ac6111221a2725bdf7be06166cf8b69a.ctex"]
+source_file="res://Assets/Textures/Weapons/AssaultRifle.png"
+dest_files=["res://.godot/imported/AssaultRifle.png-16741135926e05120d4e1f78a3571794.ctex"]
 
 [params]
 
