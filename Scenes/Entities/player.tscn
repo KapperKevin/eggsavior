@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ys3d4sntb2b4" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Resource" uid="uid://dv50lx154larp" path="res://Resources/player.tres" id="2_6t5aa"]
-[ext_resource type="PackedScene" uid="uid://bk0hya6uvt76c" path="res://Scenes/pistol.tscn" id="3_vgqql"]
+[ext_resource type="PackedScene" uid="uid://bk0hya6uvt76c" path="res://Scenes/Entities/pistol.tscn" id="3_vgqql"]
 [ext_resource type="Texture2D" uid="uid://boibs4lcrqj7f" path="res://Assets/Textures/Player/player_chicken.png" id="4_fkybt"]
 [ext_resource type="Texture2D" uid="uid://bkkcwteu01vgd" path="res://Assets/Textures/reticle.png" id="5_fkybt"]
 

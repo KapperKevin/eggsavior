@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Egg" format=3 uid="uid://b3ymljb5elrok"]
 
-[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/egg_data.gd" id="1_ovaoy"]
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="1_ovaoy"]
 [ext_resource type="Texture2D" uid="uid://yaycorib5yf5" path="res://Assets/Textures/Eggs/DeviousEgg.png" id="1_w60sf"]
 
 [resource]

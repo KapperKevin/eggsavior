@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Egg" format=3 uid="uid://565m88swol7r"]
 
 [ext_resource type="Texture2D" uid="uid://b3aji8oda1wup" path="res://Assets/Textures/Eggs/MetalEgg.png" id="1_akiom"]
-[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/egg_data.gd" id="1_vqpo8"]
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="1_vqpo8"]
 
 [resource]
 script = ExtResource("1_vqpo8")
