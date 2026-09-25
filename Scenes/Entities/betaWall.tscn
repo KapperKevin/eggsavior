@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://sy2muw1v8qsy"]
+
+[ext_resource type="Texture2D" uid="uid://5lwxkth43p5t" path="res://Assets/Textures/BetaWall.png" id="1_b3v0j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(32, 32)
+
+[node name="BetaWall" type="StaticBody2D" unique_id=1937739775]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536865400]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1038020670]
+texture_filter = 1
+texture = ExtResource("1_b3v0j")

@@ -2,13 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://bb5rneh6xar5c" path="res://Scenes/Entities/player.tscn" id="1_5luyr"]
 [ext_resource type="PackedScene" uid="uid://cq5at4ktvgple" path="res://Scenes/Utility/egg_spawner_controller.tscn" id="2_sdd4j"]
-[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="3_uuv3k"]
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="3_sdd4j"]
 [ext_resource type="Resource" uid="uid://ugsn31a61jwo" path="res://Resources/EggResources/devil_egg.tres" id="4_ud61j"]
 [ext_resource type="Resource" uid="uid://b3ymljb5elrok" path="res://Resources/EggResources/devious_egg.tres" id="5_arqs3"]
 [ext_resource type="Resource" uid="uid://565m88swol7r" path="res://Resources/EggResources/metal_egg.tres" id="6_u8hfp"]
 [ext_resource type="Resource" uid="uid://bl0rmev8yeisn" path="res://Resources/EggResources/slime_egg.tres" id="7_oo6ge"]
 [ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/swift_egg.tres" id="8_le0k3"]
 [ext_resource type="PackedScene" uid="uid://c7r3a1uf6bla4" path="res://Scenes/Entities/Egg.tscn" id="9_17emk"]
+[ext_resource type="PackedScene" uid="uid://sy2muw1v8qsy" path="res://Scenes/Entities/betaWall.tscn" id="10_uuv3k"]
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
 
@@ -21,7 +22,10 @@ offset_right = 252.0
 offset_bottom = 135.0
 
 [node name="EggSpawnerController" parent="." unique_id=1120494739 instance=ExtResource("2_sdd4j")]
-all_eggs = Array[ExtResource("3_uuv3k")]([ExtResource("4_ud61j"), ExtResource("5_arqs3"), ExtResource("6_u8hfp"), ExtResource("7_oo6ge"), ExtResource("8_le0k3")])
+all_eggs = Array[ExtResource("3_sdd4j")]([ExtResource("4_ud61j"), ExtResource("5_arqs3"), ExtResource("6_u8hfp"), ExtResource("7_oo6ge"), ExtResource("8_le0k3")])
 egg_scene = ExtResource("9_17emk")
+
+[node name="BetaWall" parent="." unique_id=1937739775 instance=ExtResource("10_uuv3k")]
+position = Vector2(136, 39)
 
 [connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]
