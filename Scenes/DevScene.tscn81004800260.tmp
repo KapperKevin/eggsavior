@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://565m88swol7r" path="res://Resources/EggResources/metal_egg.tres" id="6_k2iba"]
 [ext_resource type="Resource" uid="uid://bl0rmev8yeisn" path="res://Resources/EggResources/slime_egg.tres" id="7_k8lcy"]
 [ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/swift_egg.tres" id="8_da1wn"]
-[ext_resource type="PackedScene" uid="uid://c7r3a1uf6bla4" path="res://Scenes/Egg.tscn" id="9_ryche"]
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
 
@@ -22,6 +21,5 @@ offset_bottom = 135.0
 
 [node name="EggSpawnerController" parent="." unique_id=1120494739 instance=ExtResource("2_er3k5")]
 all_eggs = Array[ExtResource("3_v4yyn")]([ExtResource("4_ryche"), ExtResource("5_qtj1u"), ExtResource("6_k2iba"), ExtResource("7_k8lcy"), ExtResource("8_da1wn")])
-egg_scene = ExtResource("9_ryche")
 
 [connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]

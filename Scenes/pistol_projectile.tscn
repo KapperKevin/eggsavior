@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dufe6js4xp5kf"]
 
-[ext_resource type="Script" uid="uid://3k13r1xgnk5n" path="res://Scenes/pistol_projectile.gd" id="1_ihp20"]
+[ext_resource type="Script" uid="uid://3k13r1xgnk5n" path="res://Scripts/pistol_projectile.gd" id="1_ihp20"]
 [ext_resource type="Texture2D" uid="uid://d4hbddru0vgyb" path="res://Assets/Textures/pistol_projectile.png" id="1_y0xs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]

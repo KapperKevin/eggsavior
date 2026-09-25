@@ -11,23 +11,23 @@ extends Resource
 @export var current_player_speed: float = 100.0
 @export var current_immunity_frames: float = 0.5
 
-func apply_effect(given_egg: Egg) -> void:
+func apply_effect(given_egg: EggData) -> void:
 	match given_egg.effect_type:
-		Egg.EggType.PHYSICAL_EFFECT:
+		EggData.EggType.PHYSICAL_EFFECT:
 			set_physical_effect(given_egg)
-		Egg.EggType.STAT_EFFECT:
+		EggData.EggType.STAT_EFFECT:
 			set_stat_effect(given_egg)
 		
 
-func set_stat_effect(given_egg: Egg) -> void:
+func set_stat_effect(given_egg: EggData) -> void:
 	match given_egg.effect:
-		Egg.EggStatEffect.NONE:
+		EggData.EggStatEffect.NONE:
 			print("This Egg has no Stat effect!")
-		Egg.EggStatEffect.SPEED:
+		EggData.EggStatEffect.SPEED:
 			current_player_speed = current_player_speed + (current_player_speed * given_egg.stat_effect)
 			print("Egg has updated Speed!")
-		Egg.EggStatEffect.DAMAGE:
+		EggData.EggStatEffect.DAMAGE:
 			print("Egg has updated Damage!")
 
-func set_physical_effect(given_egg: Egg) -> void:
+func set_physical_effect(given_egg: EggData) -> void:
 	print("No physical effects yet")

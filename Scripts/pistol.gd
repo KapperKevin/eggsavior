@@ -15,12 +15,12 @@ func _ready() -> void:
 	reloadTimer.timeout.connect(_on_reload_finished)
 	#Setting Ammo of weapon
 	current_ammo = pistol_data.gun_ammo
-	
+
+#This Function is called from player.gd when left mouse is pressed
 func shooting() -> void:
 	if can_shoot() == false:
 		return
 
-		
 	#This Block of code runs if can_shoot() == true
 	attackTimer.start()
 
@@ -40,9 +40,12 @@ func shooting() -> void:
 		print("reloading...")
 		reloadTimer.start()
 		return
-	
+
+#checks if the player is allowed to shoot
 func can_shoot() -> bool:
 	return attackTimer.is_stopped() and reloadTimer.is_stopped()
 
+#Is called when reloadTimer has ended
 func _on_reload_finished() -> void:
+	print("Reloaded!")
 	current_ammo = pistol_data.gun_ammo
