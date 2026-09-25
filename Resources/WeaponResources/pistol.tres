@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="GunData" format=3 uid="uid://b7ctaalrdbq20"]
 
 [ext_resource type="PackedScene" uid="uid://dufe6js4xp5kf" path="res://Scenes/Entities/pistol_projectile.tscn" id="1_gvyrh"]
-[ext_resource type="Script" uid="uid://dwad8ajk5b8sj" path="res://Scripts/Data/GunData.gd" id="1_nry70"]
+[ext_resource type="Script" uid="uid://dwad8ajk5b8sj" path="res://Scripts/Data/GunData.gd" id="2_04e5y"]
 
 [resource]
-script = ExtResource("1_nry70")
+script = ExtResource("2_04e5y")
 gun_ammo = 5
 gun_reload_speed = 2.0
-bullet_velocity = 400
+bullet_velocity = 200
+bullet_bounces = 1
 bullet_projectile = ExtResource("1_gvyrh")
 metadata/_custom_type_script = "uid://dwad8ajk5b8sj"

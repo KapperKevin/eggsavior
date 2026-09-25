@@ -24,13 +24,19 @@ func shooting() -> void:
 	#This Block of code runs if can_shoot() == true
 	attackTimer.start()
 
-	#Spawns and puts velocity into bullet projectile
-	var projectile = pistol_data.bullet_projectile.instantiate()
-	projectile.global_position = muzzle.global_position
 	
-	var shoot_direction = global_transform.x
-	projectile.velocity = shoot_direction * pistol_data.bullet_velocity
+	var projectile = pistol_data.bullet_projectile.instantiate()
+	
+	#Adds Necessary Effects to Bullet
+	projectile.current_bounces = pistol_data.bullet_bounces
+	
+	#Spawns and puts velocity into bullet projectile
+	projectile.global_position = muzzle.global_position
+	var shoot_direction = muzzle.global_transform.x.normalized()
+	projectile.velocity = shoot_direction * pistol_data.bullet_speed
 	projectile.rotation = shoot_direction.angle()
+	
+	
 	
 	get_tree().current_scene.add_child(projectile)
 	

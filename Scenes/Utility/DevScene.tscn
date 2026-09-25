@@ -28,4 +28,10 @@ egg_scene = ExtResource("9_17emk")
 [node name="BetaWall" parent="." unique_id=1937739775 instance=ExtResource("10_uuv3k")]
 position = Vector2(136, 39)
 
+[node name="BetaWall2" parent="." unique_id=625318353 instance=ExtResource("10_uuv3k")]
+position = Vector2(15, 37)
+
+[node name="BetaWall3" parent="." unique_id=1898031443 instance=ExtResource("10_uuv3k")]
+position = Vector2(64, -53)
+
 [connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]

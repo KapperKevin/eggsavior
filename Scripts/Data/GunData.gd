@@ -7,7 +7,7 @@ extends Resource
 @export var gun_ammo: int = 1
 @export var gun_reload_speed: float = 1
 @export var gun_overheat: int = 0
-@export var bullet_velocity: int = 1
+@export var bullet_speed: float = 200
 @export var bullet_pierce: int = 0
 @export var bullet_bounces: int = 0
 
