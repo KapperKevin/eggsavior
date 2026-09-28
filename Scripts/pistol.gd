@@ -29,6 +29,7 @@ func shooting() -> void:
 	
 	#Adds Necessary Effects to Bullet
 	projectile.current_bounces = pistol_data.bullet_bounces
+	projectile.on_hit_damage = pistol_data.gun_damage
 	
 	#Spawns and puts velocity into bullet projectile
 	projectile.global_position = muzzle.global_position

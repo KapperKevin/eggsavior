@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var current_bounces: int
+var on_hit_damage: int
 
 
 func _physics_process(delta: float) -> void:
@@ -11,6 +12,10 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var collider = collision.get_collider()
+		if collider.is_in_group("enemy"):
+			collider.take_damage(on_hit_damage)
+			queue_free()
+		
 		if collider is StaticBody2D or collider is TileMapLayer:
 			if current_bounces > 0:
 			# Bounce away from the wall using the collision normal

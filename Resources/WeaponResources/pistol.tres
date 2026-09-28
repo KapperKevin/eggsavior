@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("2_04e5y")
+gun_damage = 5
 gun_ammo = 5
 gun_reload_speed = 2.0
-bullet_velocity = 200
 bullet_bounces = 1
 bullet_projectile = ExtResource("1_gvyrh")
 metadata/_custom_type_script = "uid://dwad8ajk5b8sj"
