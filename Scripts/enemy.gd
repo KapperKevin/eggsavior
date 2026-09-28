@@ -2,18 +2,23 @@ extends CharacterBody2D
 
 @export var spawned_enemy: EnemyData
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var hurt_box: Area2D = $HurtBox
 
 var current_health: int = 15 #Assinged as default in no EnemyData is found
 var current_speed: int = 100 #Assinged as default in no EnemyData is found
+var current_damage: int= 5
 
 func _ready() -> void:
+	hurt_box.body_entered.connect(_on_hurt_box_body_entered)
+	#Setting the Stats of the Enemy from the Enemy Data
 	if spawned_enemy:
 		sprite.texture = spawned_enemy.enemy_sprite
 		current_health = spawned_enemy.enemy_hitpoints
 		current_speed = spawned_enemy.enemy_speed
+	#If not EnemyData exits, goes with default stats
 	else:
 		print("No Enemy Data Available! Setting Default Stats.")
-	
+
 func take_damage(damage_recieved: int) -> void:
 	current_health -= damage_recieved
 	print("Enemy Recieved Damage! Damage taken: ", damage_recieved)
@@ -23,4 +28,9 @@ func take_damage(damage_recieved: int) -> void:
 func death() -> void:
 	print("You have killed me ;(")
 	queue_free()
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body.take_damage(current_damage)
+		print("Player took Damage!")
 	

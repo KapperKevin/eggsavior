@@ -5,6 +5,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(22, 24)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=541319305 groups=["enemy"]]
 collision_layer = 8
 collision_mask = 3
@@ -15,3 +18,10 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1080138351]
 texture = ExtResource("2_o6kgl")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=248556499]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1768422067]
+shape = SubResource("RectangleShape2D_yf5fn")

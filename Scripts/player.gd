@@ -9,9 +9,12 @@ extends CharacterBody2D
 var weapon_spawn_node: Node2D
 var orbit_distance: float = 15.0
 var speed: float
+var health: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#Setting the Player's Stats
+	health = stats.current_player_health
 	speed = stats.current_player_speed
 	#Equiping Guns
 	if weapon_scene:
@@ -21,6 +24,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	#MOVING
 	movementLoop()
 	
@@ -60,3 +64,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 func fire_weapon() -> void:
 	weapon_spawn_node.shooting()
+	
+func death() -> void:
+	print("You Died!")
+	queue_free()
+	
+func take_damage(damage_recieved: int) -> void:
+	print(damage_recieved)
+	health -= damage_recieved
+	if health <= 0:
+		print(health)
+		death()

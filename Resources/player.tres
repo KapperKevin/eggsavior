@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_k6arq")
+base_player_health = 15
+current_player_health = 15
 metadata/_custom_type_script = "uid://lp3c0md4gnb4"
