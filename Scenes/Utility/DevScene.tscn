@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c7r3a1uf6bla4" path="res://Scenes/Entities/Egg.tscn" id="9_17emk"]
 [ext_resource type="PackedScene" uid="uid://sy2muw1v8qsy" path="res://Scenes/Entities/betaWall.tscn" id="10_uuv3k"]
 [ext_resource type="PackedScene" uid="uid://2amrhg8kswtf" path="res://Scenes/Entities/enemy.tscn" id="11_uuv3k"]
+[ext_resource type="PackedScene" uid="uid://s0xag6kgv4ip" path="res://Scenes/Utility/hud.tscn" id="12_ud61j"]
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
 
@@ -37,5 +38,7 @@ position = Vector2(64, -53)
 
 [node name="Enemy" parent="." unique_id=541319305 instance=ExtResource("11_uuv3k")]
 position = Vector2(135, -2)
+
+[node name="hud" parent="." unique_id=464859338 groups=["hud"] instance=ExtResource("12_ud61j")]
 
 [connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]

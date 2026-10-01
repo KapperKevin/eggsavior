@@ -76,7 +76,8 @@ func take_damage(damage_recieved: int) -> void:
 		print("You lost an Egg!")
 	else:
 		health -= damage_recieved
-		
+		stats.current_player_health -= damage_recieved
+		get_tree().get_first_node_in_group("hud").update_hud()
 	if health <= 0:
 		print(health)
 		death()

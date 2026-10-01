@@ -23,6 +23,7 @@ window/stretch/aspect="expand"
 
 player=""
 enemy=""
+hud=""
 
 [input]
 

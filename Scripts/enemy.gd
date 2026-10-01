@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var current_health: int = 15 #Assinged as default in no EnemyData is found
 var current_speed: int = 100 #Assinged as default in no EnemyData is found
-var current_damage: int= 5
+var current_damage: int= 1
 
 func _ready() -> void:
 	hurt_box.body_entered.connect(_on_hurt_box_body_entered)

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://s0xag6kgv4ip"]
+
+[ext_resource type="Script" uid="uid://ccpb1r50a651r" path="res://Scenes/Utility/hud.gd" id="1_bx6g7"]
+[ext_resource type="Texture2D" uid="uid://d3qbsxd2rntjf" path="res://Assets/Textures/HeartEggContainers.png" id="1_nasa4"]
+[ext_resource type="Resource" uid="uid://dv50lx154larp" path="res://Resources/player.tres" id="2_d5rtq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5rtq"]
+atlas = ExtResource("1_nasa4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw7lh"]
+atlas = ExtResource("1_nasa4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf5fn"]
+atlas = ExtResource("1_nasa4")
+region = Rect2(0, 0, 32, 32)
+
+[node name="hud" type="CanvasLayer" unique_id=464859338]
+script = ExtResource("1_bx6g7")
+player_stats = ExtResource("2_d5rtq")
+
+[node name="Control" type="Control" parent="." unique_id=1056858130]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HeartContainer" type="HBoxContainer" parent="Control" unique_id=232943493]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 1
+
+[node name="Heart1" type="TextureRect" parent="Control/HeartContainer" unique_id=356598616]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_d5rtq")
+
+[node name="Heart2" type="TextureRect" parent="Control/HeartContainer" unique_id=1211915046]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_vw7lh")
+
+[node name="Heart3" type="TextureRect" parent="Control/HeartContainer" unique_id=1972898978]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_yf5fn")
