@@ -11,7 +11,13 @@ extends Resource
 @export var current_player_speed: float = 100.0
 @export var current_immunity_frames: float = 0.5
 
+@export_category("Active Buffs From Eggs")
+@export var egg_damage_mutiplier: float = 0
+@export var egg_speed_mutiplier: float = 0
+@export var egg_extra_hitpoints: float = 0
+
 func apply_effect(given_egg: EggData) -> void:
+	egg_extra_hitpoints += given_egg.hit_point
 	match given_egg.effect_type:
 		EggData.EggType.PHYSICAL_EFFECT:
 			set_physical_effect(given_egg)
@@ -25,9 +31,11 @@ func set_stat_effect(given_egg: EggData) -> void:
 			print("This Egg has no Stat effect!")
 		EggData.EggStatEffect.SPEED:
 			current_player_speed = current_player_speed + (current_player_speed * given_egg.stat_effect)
-			print("Egg has updated Speed!")
+			egg_speed_mutiplier += given_egg.stat_effect
+			print("Egg has updated Speed! Mutiplier: ", egg_speed_mutiplier)
 		EggData.EggStatEffect.DAMAGE:
-			print("Egg has updated Damage!")
+			egg_damage_mutiplier += given_egg.stat_effect
+			print("Egg has updated Damage! Mutiplier: ", egg_damage_mutiplier)
 
 func set_physical_effect(given_egg: EggData) -> void:
 	print("No physical effects yet")

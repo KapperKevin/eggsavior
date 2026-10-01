@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var pistol_data: GunData
+@export var players_stats: PlayerStats
+
 @onready var muzzle: Marker2D = $Muzzle
 @onready var attackTimer: Timer = $AttackTimer
 @onready var reloadTimer: Timer = $ReloadTimer
@@ -29,7 +31,8 @@ func shooting() -> void:
 	
 	#Adds Necessary Effects to Bullet
 	projectile.current_bounces = pistol_data.bullet_bounces
-	projectile.on_hit_damage = pistol_data.gun_damage
+	var final_damage = pistol_data.gun_damage + (pistol_data.gun_damage * players_stats.egg_damage_mutiplier)
+	projectile.on_hit_damage = final_damage
 	
 	#Spawns and puts velocity into bullet projectile
 	projectile.global_position = muzzle.global_position

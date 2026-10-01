@@ -71,7 +71,12 @@ func death() -> void:
 	
 func take_damage(damage_recieved: int) -> void:
 	print(damage_recieved)
-	health -= damage_recieved
+	if stats.egg_extra_hitpoints > 0:
+		stats.egg_extra_hitpoints -= 1
+		print("You lost an Egg!")
+	else:
+		health -= damage_recieved
+		
 	if health <= 0:
 		print(health)
 		death()
