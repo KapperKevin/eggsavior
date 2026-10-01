@@ -9,12 +9,10 @@ extends CharacterBody2D
 var weapon_spawn_node: Node2D
 var orbit_distance: float = 15.0
 var speed: float
-var health: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Setting the Player's Stats
-	health = stats.current_player_health
 	speed = stats.current_player_speed
 	#Equiping Guns
 	if weapon_scene:
@@ -61,6 +59,11 @@ func collect_egg(egg: EggData) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
 		fire_weapon()
+	#Temporay healing function
+	if event.is_action_pressed("ui_text_completion_accept") or Input.is_key_pressed(KEY_H):
+		stats.heal(2)
+		get_tree().get_first_node_in_group("hud").update_hud()
+		print("Healed! Current HP: ", stats.current_player_health)
 	
 func fire_weapon() -> void:
 	weapon_spawn_node.shooting()
@@ -75,9 +78,11 @@ func take_damage(damage_recieved: int) -> void:
 		stats.egg_extra_hitpoints -= 1
 		print("You lost an Egg!")
 	else:
-		health -= damage_recieved
 		stats.current_player_health -= damage_recieved
 		get_tree().get_first_node_in_group("hud").update_hud()
-	if health <= 0:
-		print(health)
+	if stats.current_player_health <= 0:
+		print(stats.current_player_health)
 		death()
+
+#Temporary
+	
