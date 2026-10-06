@@ -15,7 +15,6 @@ func update_hud() -> void:
 	
 	for i in range(hearts.size()):
 		var hp_for_this_heart = player_stats.current_player_health - (i * 2)
-		print(hp_for_this_heart)
 		var texture_rect = hearts[i] as TextureRect
 		
 		var atlas_tex = texture_rect.texture as AtlasTexture

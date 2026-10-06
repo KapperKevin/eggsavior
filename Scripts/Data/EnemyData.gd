@@ -8,4 +8,5 @@ extends Resource
 @export var aggro_range: int = 0 #Not useful for now
 
 @export_category("Visual")
+@export var enemy_name: String
 @export var enemy_sprite: Texture2D

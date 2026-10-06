@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://e62vc1ad70us"]
 
+[ext_resource type="Texture2D" uid="uid://dse2i4xmnhi7u" path="res://Assets/Textures/EnemyTextures/Snake.png" id="1_143oj"]
 [ext_resource type="Script" uid="uid://cmgw4d1cwrhga" path="res://Scripts/Data/EnemyData.gd" id="1_gffby"]
 
 [resource]
 script = ExtResource("1_gffby")
-enemy_hitpoints = 15
+enemy_hitpoints = 20
 enemy_damage = 5
-enemy_speed = 150
+enemy_speed = 200
+enemy_name = "Snake"
+enemy_sprite = ExtResource("1_143oj")
 metadata/_custom_type_script = "uid://cmgw4d1cwrhga"

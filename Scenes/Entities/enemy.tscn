@@ -25,3 +25,5 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1768422067]
 shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=722143082]

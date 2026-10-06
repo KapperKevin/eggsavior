@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bxlevake1ck3p"]
+
+[ext_resource type="PackedScene" uid="uid://2amrhg8kswtf" path="res://Scenes/Entities/enemy.tscn" id="1_baghe"]
+[ext_resource type="Script" uid="uid://hucq7c4c20h6" path="res://snake.gd" id="2_gxkgb"]
+[ext_resource type="Resource" uid="uid://e62vc1ad70us" path="res://Resources/snake_data.tres" id="3_ymru8"]
+
+[node name="Snake" unique_id=541319305 instance=ExtResource("1_baghe")]
+script = ExtResource("2_gxkgb")
+spawned_enemy = ExtResource("3_ymru8")
+
+[node name="Sprite2D" parent="." index="1" unique_id=1080138351]
+texture_filter = 1
+texture = null
