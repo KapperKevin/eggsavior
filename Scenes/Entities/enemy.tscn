@@ -17,6 +17,7 @@ script = ExtResource("1_r2gkr")
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1080138351]
+texture_filter = 1
 texture = ExtResource("2_o6kgl")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=248556499]

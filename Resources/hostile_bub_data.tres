@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cyr51p7qp24bp"]
+
+[ext_resource type="Texture2D" uid="uid://34bsfamexsct" path="res://Assets/Textures/EnemyTextures/HostileBub.png" id="1_bys7i"]
+[ext_resource type="Script" uid="uid://cmgw4d1cwrhga" path="res://Scripts/Data/EnemyData.gd" id="1_fcean"]
+
+[resource]
+script = ExtResource("1_fcean")
+enemy_hitpoints = 25
+enemy_speed = 0
+aggro_range = 100
+enemy_sprite = ExtResource("1_bys7i")
+metadata/_custom_type_script = "uid://cmgw4d1cwrhga"

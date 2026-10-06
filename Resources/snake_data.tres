@@ -7,7 +7,7 @@
 script = ExtResource("1_gffby")
 enemy_hitpoints = 20
 enemy_damage = 5
-enemy_speed = 200
+enemy_speed = 50
 enemy_name = "Snake"
 enemy_sprite = ExtResource("1_143oj")
 metadata/_custom_type_script = "uid://cmgw4d1cwrhga"

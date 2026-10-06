@@ -10,9 +10,14 @@
 [ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/swift_egg.tres" id="8_le0k3"]
 [ext_resource type="PackedScene" uid="uid://c7r3a1uf6bla4" path="res://Scenes/Entities/Egg.tscn" id="9_17emk"]
 [ext_resource type="PackedScene" uid="uid://sy2muw1v8qsy" path="res://Scenes/Entities/betaWall.tscn" id="10_uuv3k"]
-[ext_resource type="PackedScene" uid="uid://2amrhg8kswtf" path="res://Scenes/Entities/enemy.tscn" id="11_uuv3k"]
 [ext_resource type="PackedScene" uid="uid://bxlevake1ck3p" path="res://Scenes/Entities/snake.tscn" id="12_arqs3"]
 [ext_resource type="PackedScene" uid="uid://s0xag6kgv4ip" path="res://Scenes/Utility/hud.tscn" id="12_ud61j"]
+[ext_resource type="PackedScene" uid="uid://bro3xeo1nf3xv" path="res://Scenes/Entities/hostile_bub.tscn" id="13_arqs3"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_arqs3"]
+vertices = PackedVector2Array(289.09375, -126.25, 291.89844, 166.89844, -134.38281, 163.07813, -145.60938, -122.42969, 76.00781, -131.99219)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(76, -142, 299, -136, 302, 177, -144, 173, -156, -132)])
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
 
@@ -42,7 +47,11 @@ position = Vector2(64, -53)
 [node name="Snake" parent="." unique_id=541319305 instance=ExtResource("12_arqs3")]
 position = Vector2(131, 2)
 
-[node name="Enemy" parent="." unique_id=481710003 instance=ExtResource("11_uuv3k")]
-position = Vector2(135, -49)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=104664332]
+position = Vector2(-14, -18)
+navigation_polygon = SubResource("NavigationPolygon_arqs3")
+
+[node name="HostileBub" parent="." unique_id=2144915039 instance=ExtResource("13_arqs3")]
+position = Vector2(61, 80)
 
 [connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]

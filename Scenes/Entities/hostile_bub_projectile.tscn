@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://uhsiqc6n7knp"]
+
+[ext_resource type="Texture2D" uid="uid://d01m2tgvidvea" path="res://Assets/Textures/HostileBubProjectile.png" id="1_eqis8"]
+[ext_resource type="Script" uid="uid://ce7gpn0prfdk2" path="res://Scripts/hostile_bub_projectile.gd" id="1_soyma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 5.0
+
+[node name="hostile_bub_projectile" type="CharacterBody2D" unique_id=1625468603]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_soyma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1162351828]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2006715116]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_eqis8")
