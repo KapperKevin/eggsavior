@@ -54,7 +54,7 @@ func movementLoop() -> void:
 
 func collect_egg(egg: EggData) -> void:
 	stats.apply_effect(egg)
-	speed = stats.current_player_speed
+	update_current_stats()
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
@@ -71,12 +71,15 @@ func fire_weapon() -> void:
 func death() -> void:
 	print("You Died!")
 	queue_free()
-	
+
+#Function called when player is hit by enemy. Handles HP loss, Egg Lose, Stat Updates
 func take_damage(damage_recieved: int) -> void:
 	print(damage_recieved)
 	if stats.egg_extra_hitpoints > 0:
 		stats.egg_extra_hitpoints -= 1
 		print("You lost an Egg!")
+		stats.remove_egg()
+		update_current_stats()
 	else:
 		stats.current_player_health -= damage_recieved
 		get_tree().get_first_node_in_group("hud").update_hud()
@@ -84,5 +87,7 @@ func take_damage(damage_recieved: int) -> void:
 		print(stats.current_player_health)
 		death()
 
-#Temporary
+#Function is called anytime the Player needs stats updated.
+func update_current_stats() -> void:
+	speed = stats.current_player_speed
 	

@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://b5tiev8pyxeu8" path="res://Scenes/Utility/nest.tscn" id="14_u8hfp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_arqs3"]
-vertices = PackedVector2Array(289.09375, -126.25, 291.89844, 166.71094, 55.320313, 160.27344, 64.8125, -122.52344, 78.89844, -131.90625)
+vertices = PackedVector2Array(289.09375, -126.13281, 291.89844, 166.71094, 55.320313, 160.27344, 64.75, -120.703125, 89.546875, -128.96875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(76, -142, 299, -136, 302, 177, 45, 170, 55, -128)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(88, -139, 299, -136, 302, 177, 45, 170, 55, -128)])
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
 y_sort_enabled = true

@@ -34,7 +34,6 @@ func death() -> void:
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.take_damage(current_damage)
-		print("Player took Damage!")
 
 func get_path_direction(target_pos: Vector2) -> Vector2:
 	nav_agent.target_position = target_pos
