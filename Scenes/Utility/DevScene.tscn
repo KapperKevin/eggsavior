@@ -2,12 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bb5rneh6xar5c" path="res://Scenes/Entities/player.tscn" id="1_5luyr"]
 [ext_resource type="PackedScene" uid="uid://cq5at4ktvgple" path="res://Scenes/Utility/egg_spawner_controller.tscn" id="2_sdd4j"]
-[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="3_sdd4j"]
-[ext_resource type="Resource" uid="uid://ugsn31a61jwo" path="res://Resources/EggResources/devil_egg.tres" id="4_ud61j"]
-[ext_resource type="Resource" uid="uid://b3ymljb5elrok" path="res://Resources/EggResources/devious_egg.tres" id="5_arqs3"]
-[ext_resource type="Resource" uid="uid://565m88swol7r" path="res://Resources/EggResources/metal_egg.tres" id="6_u8hfp"]
-[ext_resource type="Resource" uid="uid://bl0rmev8yeisn" path="res://Resources/EggResources/slime_egg.tres" id="7_oo6ge"]
-[ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/swift_egg.tres" id="8_le0k3"]
 [ext_resource type="PackedScene" uid="uid://c7r3a1uf6bla4" path="res://Scenes/Entities/Egg.tscn" id="9_17emk"]
 [ext_resource type="PackedScene" uid="uid://sy2muw1v8qsy" path="res://Scenes/Entities/betaWall.tscn" id="10_uuv3k"]
 [ext_resource type="PackedScene" uid="uid://bxlevake1ck3p" path="res://Scenes/Entities/snake.tscn" id="12_arqs3"]
@@ -23,9 +17,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(76, -142, 299, -136, 30
 [node name="DevScene" type="Node2D" unique_id=661723530]
 y_sort_enabled = true
 
-[node name="Nest3" parent="." unique_id=984281553 instance=ExtResource("14_u8hfp")]
-position = Vector2(-226, 62)
-
 [node name="Player" parent="." unique_id=164894348 groups=["player"] instance=ExtResource("1_5luyr")]
 position = Vector2(-5, -73)
 
@@ -36,7 +27,6 @@ offset_right = 252.0
 offset_bottom = 135.0
 
 [node name="EggSpawnerController" parent="." unique_id=1120494739 instance=ExtResource("2_sdd4j")]
-all_eggs = Array[ExtResource("3_sdd4j")]([ExtResource("4_ud61j"), ExtResource("5_arqs3"), ExtResource("6_u8hfp"), ExtResource("7_oo6ge"), ExtResource("8_le0k3")])
 egg_scene = ExtResource("9_17emk")
 
 [node name="hud" parent="." unique_id=464859338 groups=["hud"] instance=ExtResource("12_ud61j")]
@@ -68,7 +58,25 @@ position = Vector2(-227, -6)
 [node name="Nest2" parent="." unique_id=1671200036 instance=ExtResource("14_u8hfp")]
 position = Vector2(-226, -75)
 
+[node name="Nest3" parent="." unique_id=984281553 instance=ExtResource("14_u8hfp")]
+position = Vector2(-226, 62)
+
 [node name="Nest4" parent="." unique_id=598629143 instance=ExtResource("14_u8hfp")]
 position = Vector2(-150, -77)
+
+[node name="Nest5" parent="." unique_id=413038624 instance=ExtResource("14_u8hfp")]
+position = Vector2(-151, -7)
+
+[node name="Nest6" parent="." unique_id=1430812674 instance=ExtResource("14_u8hfp")]
+position = Vector2(-153, 66)
+
+[node name="Nest7" parent="." unique_id=2039205062 instance=ExtResource("14_u8hfp")]
+position = Vector2(-85, -5)
+
+[node name="Nest8" parent="." unique_id=1790449073 instance=ExtResource("14_u8hfp")]
+position = Vector2(-87, -76)
+
+[node name="Nest9" parent="." unique_id=1743936099 instance=ExtResource("14_u8hfp")]
+position = Vector2(-81, 66)
 
 [connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]

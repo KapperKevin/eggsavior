@@ -39,7 +39,6 @@ func roll_random_egg() -> EggData:
 	for egg in all_eggs:
 		current_weight += get_rarity_weight(egg.rarity)
 		if random_roll < current_weight:
-			print("Rolled egg: ", egg.egg_name)
 			return egg
 			
 	return all_eggs[0]
@@ -73,5 +72,4 @@ func spawn_egg() -> void:
 				new_egg.possible_egg = rolled_egg
 				get_tree().current_scene.add_child(new_egg)
 				new_egg.global_position = marker.global_position
-				print(new_egg.global_position)
 				

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EggData" format=3 uid="uid://dqxtej8vrn8h4"]
+
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="1_3d2gf"]
+[ext_resource type="Texture2D" uid="uid://cbrvq0w6cq6r5" path="res://Assets/Textures/Eggs/LavaEgg.png" id="1_116n5"]
+
+[resource]
+script = ExtResource("1_3d2gf")
+egg_name = "Lava Egg"
+egg_sprite = ExtResource("1_116n5")
+rarity = 1
+metadata/_custom_type_script = "uid://dxwlskn8mpbe2"

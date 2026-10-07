@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://cq5at4ktvgple"]
 
 [ext_resource type="Script" uid="uid://bvqkmgqc0pdw3" path="res://Scripts/EggSpawner.gd" id="1_8y1xl"]
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="2_tyoxo"]
+[ext_resource type="Resource" uid="uid://ugsn31a61jwo" path="res://Resources/EggResources/devil_egg.tres" id="3_8y5q2"]
+[ext_resource type="Resource" uid="uid://b3ymljb5elrok" path="res://Resources/EggResources/devious_egg.tres" id="4_yvq2f"]
+[ext_resource type="Resource" uid="uid://565m88swol7r" path="res://Resources/EggResources/metal_egg.tres" id="5_krng7"]
+[ext_resource type="Resource" uid="uid://bl0rmev8yeisn" path="res://Resources/EggResources/slime_egg.tres" id="6_006yr"]
+[ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/swift_egg.tres" id="7_onfnu"]
+[ext_resource type="Resource" uid="uid://d31fjljmn0p22" path="res://Resources/EggResources/candy_egg.tres" id="8_3e3xm"]
+[ext_resource type="Resource" uid="uid://3lmcjw8ohj0d" path="res://Resources/EggResources/cool_egg.tres" id="9_x3j1e"]
+[ext_resource type="Resource" uid="uid://co64ns0oh80hv" path="res://Resources/EggResources/fancy_egg.tres" id="10_ela71"]
+[ext_resource type="Resource" uid="uid://dj0flrvo0r3ph" path="res://Resources/EggResources/frost_egg.tres" id="11_6dtxc"]
+[ext_resource type="Resource" uid="uid://dqxtej8vrn8h4" path="res://Resources/EggResources/lava_egg.tres" id="12_tntng"]
+[ext_resource type="Resource" uid="uid://tacvo4xqxsmh" path="res://Resources/EggResources/plant_egg.tres" id="13_3uk6y"]
+[ext_resource type="Resource" uid="uid://bmy7bouvfehe0" path="res://Resources/EggResources/robotic_egg.tres" id="14_i2tdd"]
+[ext_resource type="Resource" uid="uid://c4pf4tpyu8ic0" path="res://Resources/EggResources/rock_egg.tres" id="15_1qx54"]
+[ext_resource type="Resource" uid="uid://beyw5sfxnlr2v" path="res://Resources/EggResources/shadow_egg.tres" id="16_dycgm"]
+[ext_resource type="Resource" uid="uid://cvr1y6x675s0c" path="res://Resources/EggResources/void_egg.tres" id="17_s5g86"]
 
 [node name="EggSpawnerController" type="Node" unique_id=1120494739]
 script = ExtResource("1_8y1xl")
+all_eggs = Array[ExtResource("2_tyoxo")]([ExtResource("3_8y5q2"), ExtResource("4_yvq2f"), ExtResource("5_krng7"), ExtResource("6_006yr"), ExtResource("7_onfnu"), ExtResource("8_3e3xm"), ExtResource("9_x3j1e"), ExtResource("10_ela71"), ExtResource("11_6dtxc"), ExtResource("12_tntng"), ExtResource("13_3uk6y"), ExtResource("14_i2tdd"), ExtResource("15_1qx54"), ExtResource("16_dycgm"), ExtResource("17_s5g86")])

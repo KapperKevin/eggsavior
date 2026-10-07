@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EggData" format=3 uid="uid://c4pf4tpyu8ic0"]
+
+[ext_resource type="Texture2D" uid="uid://o1v5qccumhm0" path="res://Assets/Textures/Eggs/RockEgg.png" id="1_00m2h"]
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="1_cn84n"]
+
+[resource]
+script = ExtResource("1_cn84n")
+egg_name = "Rock Egg"
+egg_sprite = ExtResource("1_00m2h")
+metadata/_custom_type_script = "uid://dxwlskn8mpbe2"
