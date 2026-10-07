@@ -10,6 +10,7 @@ extends Node
 var spawn_position: Vector2
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	spawn_egg.call_deferred()
 
 func get_rarity_weight(rarity: EggData.EggRarity) -> int:
 	match rarity:
@@ -55,8 +56,22 @@ func _on_button_pressed() -> void:
 		new_egg.possible_egg = rolled_egg
 		new_egg.global_position = spawn_position
 		get_tree().current_scene.add_child(new_egg)
-		#Applies effect to the player
-		player.stats.apply_effect(rolled_egg)
-		player.speed = player.stats.current_player_speed
+
 	else:
 		print("Error: No egg was returned from the roll!")
+
+func spawn_egg() -> void:
+	var markers = get_tree().get_nodes_in_group("egg_markers")
+	if markers.is_empty():
+		print("ERROR: No egg_markers found!")
+	
+	for marker in markers:
+		if marker is Marker2D:
+			var rolled_egg = roll_random_egg()
+			if rolled_egg != null:
+				var new_egg = egg_scene.instantiate()
+				new_egg.possible_egg = rolled_egg
+				get_tree().current_scene.add_child(new_egg)
+				new_egg.global_position = marker.global_position
+				print(new_egg.global_position)
+				

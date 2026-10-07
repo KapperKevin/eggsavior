@@ -13,15 +13,21 @@
 [ext_resource type="PackedScene" uid="uid://bxlevake1ck3p" path="res://Scenes/Entities/snake.tscn" id="12_arqs3"]
 [ext_resource type="PackedScene" uid="uid://s0xag6kgv4ip" path="res://Scenes/Utility/hud.tscn" id="12_ud61j"]
 [ext_resource type="PackedScene" uid="uid://bro3xeo1nf3xv" path="res://Scenes/Entities/hostile_bub.tscn" id="13_arqs3"]
+[ext_resource type="PackedScene" uid="uid://b5tiev8pyxeu8" path="res://Scenes/Utility/nest.tscn" id="14_u8hfp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_arqs3"]
-vertices = PackedVector2Array(289.09375, -126.25, 291.89844, 166.89844, -134.38281, 163.07813, -145.60938, -122.42969, 76.00781, -131.99219)
+vertices = PackedVector2Array(289.09375, -126.25, 291.89844, 166.71094, 55.320313, 160.27344, 64.8125, -122.52344, 78.89844, -131.90625)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(76, -142, 299, -136, 302, 177, -144, 173, -156, -132)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(76, -142, 299, -136, 302, 177, 45, 170, 55, -128)])
 
 [node name="DevScene" type="Node2D" unique_id=661723530]
+y_sort_enabled = true
+
+[node name="Nest3" parent="." unique_id=984281553 instance=ExtResource("14_u8hfp")]
+position = Vector2(-226, 62)
 
 [node name="Player" parent="." unique_id=164894348 groups=["player"] instance=ExtResource("1_5luyr")]
+position = Vector2(-5, -73)
 
 [node name="Button" type="Button" parent="." unique_id=1427294397]
 offset_left = 116.0
@@ -33,15 +39,6 @@ offset_bottom = 135.0
 all_eggs = Array[ExtResource("3_sdd4j")]([ExtResource("4_ud61j"), ExtResource("5_arqs3"), ExtResource("6_u8hfp"), ExtResource("7_oo6ge"), ExtResource("8_le0k3")])
 egg_scene = ExtResource("9_17emk")
 
-[node name="BetaWall" parent="." unique_id=1937739775 instance=ExtResource("10_uuv3k")]
-position = Vector2(136, 39)
-
-[node name="BetaWall2" parent="." unique_id=625318353 instance=ExtResource("10_uuv3k")]
-position = Vector2(15, 37)
-
-[node name="BetaWall3" parent="." unique_id=1898031443 instance=ExtResource("10_uuv3k")]
-position = Vector2(64, -53)
-
 [node name="hud" parent="." unique_id=464859338 groups=["hud"] instance=ExtResource("12_ud61j")]
 
 [node name="Snake" parent="." unique_id=541319305 instance=ExtResource("12_arqs3")]
@@ -52,6 +49,26 @@ position = Vector2(-14, -18)
 navigation_polygon = SubResource("NavigationPolygon_arqs3")
 
 [node name="HostileBub" parent="." unique_id=2144915039 instance=ExtResource("13_arqs3")]
-position = Vector2(61, 80)
+position = Vector2(204, -61)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1149218777]
+
+[node name="BetaWall3" parent="Walls" unique_id=1898031443 instance=ExtResource("10_uuv3k")]
+position = Vector2(64, -53)
+
+[node name="BetaWall" parent="Walls" unique_id=1937739775 instance=ExtResource("10_uuv3k")]
+position = Vector2(136, 39)
+
+[node name="BetaWall2" parent="Walls" unique_id=625318353 instance=ExtResource("10_uuv3k")]
+position = Vector2(15, 37)
+
+[node name="Nest" parent="." unique_id=362850577 instance=ExtResource("14_u8hfp")]
+position = Vector2(-227, -6)
+
+[node name="Nest2" parent="." unique_id=1671200036 instance=ExtResource("14_u8hfp")]
+position = Vector2(-226, -75)
+
+[node name="Nest4" parent="." unique_id=598629143 instance=ExtResource("14_u8hfp")]
+position = Vector2(-150, -77)
 
 [connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]

@@ -8,5 +8,8 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		var collider = collision.get_collider()
 		if collider.is_in_group("player"):
+			print("I Hit the player!")
 			collider.take_damage(on_hit_damage)
 			queue_free()
+		else:
+			pass

@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bnomyog75eug0" path="res://Assets/Textures/Eggs/BasicEgg.png" id="1_eh8xx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(32, 35)
+size = Vector2(34, 37)
 
 [node name="Egg" type="Area2D" unique_id=1007391378]
+visibility_layer = 2
+collision_mask = 2
 script = ExtResource("1_dyx0d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138633259]
@@ -16,3 +18,15 @@ texture = ExtResource("1_eh8xx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=887952681]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Label" type="Label" parent="." unique_id=533732638]
+texture_filter = 1
+offset_left = -27.0
+offset_top = -27.0
+offset_right = 27.0
+offset_bottom = -14.0
+theme_override_font_sizes/font_size = 9
+text = "[E] to pickup"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
