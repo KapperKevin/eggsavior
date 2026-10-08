@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwo0nypua2dk2"]
 
 [ext_resource type="Texture2D" uid="uid://vkwlt2akqes5" path="res://Assets/OrbitalEarth.png" id="1_5jr28"]
-[ext_resource type="Script" uid="uid://bjcssed80no5d" path="res://Scenes/Entities/orbital.gd" id="1_rffy5"]
+[ext_resource type="Script" uid="uid://bjcssed80no5d" path="res://Scripts/orbital.gd" id="1_rffy5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 9.0

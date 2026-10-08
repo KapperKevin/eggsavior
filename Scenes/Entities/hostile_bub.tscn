@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dp3xyt4qnvnij" path="res://Scripts/hostile_bub.gd" id="2_eb3a1"]
 [ext_resource type="Texture2D" uid="uid://34bsfamexsct" path="res://Assets/Textures/EnemyTextures/HostileBub.png" id="2_v6yqf"]
 [ext_resource type="Resource" uid="uid://cyr51p7qp24bp" path="res://Resources/hostile_bub_data.tres" id="3_eb3a1"]
-[ext_resource type="PackedScene" uid="uid://uhsiqc6n7knp" path="res://Scenes/Entities/hostile_bub_projectile.tscn" id="3_ql8hc"]
+[ext_resource type="PackedScene" uid="uid://uhsiqc6n7knp" path="res://Scenes/Projectiles/hostile_bub_projectile.tscn" id="3_ql8hc"]
 
 [node name="HostileBub" unique_id=541319305 instance=ExtResource("1_w5ghl")]
 script = ExtResource("2_eb3a1")

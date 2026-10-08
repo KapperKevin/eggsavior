@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="1_vamn5"]
 [ext_resource type="Texture2D" uid="uid://ucsibn5urhdb" path="res://Assets/Textures/Eggs/FrostEgg.png" id="1_w5slf"]
+[ext_resource type="PackedScene" uid="uid://b17b7j4pl5iua" path="res://Scenes/EggAttacks/frost_egg_attack.tscn" id="2_2d1ne"]
 
 [resource]
 script = ExtResource("1_vamn5")
 egg_name = "Frost Egg"
 egg_sprite = ExtResource("1_w5slf")
+effect_type = 1
+physical_effect = 3
+physical_effect_scene = ExtResource("2_2d1ne")
 metadata/_custom_type_script = "uid://dxwlskn8mpbe2"

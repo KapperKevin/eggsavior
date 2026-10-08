@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhy7q0mjnnoht"]
+
+[ext_resource type="Script" uid="uid://dpdrox0q4h1er" path="res://Scripts/shadow_egg_trigger.gd" id="1_a8csa"]
+[ext_resource type="Texture2D" uid="uid://bodgnc0e25ph0" path="res://Assets/Textures/Player/player_chicken_shadow_state.png" id="2_fy7op"]
+[ext_resource type="Texture2D" uid="uid://boibs4lcrqj7f" path="res://Assets/Textures/Player/player_chicken.png" id="3_plqpm"]
+
+[node name="shadow_egg_trigger" type="Node2D" unique_id=1685141571]
+script = ExtResource("1_a8csa")
+shadow_sprite = ExtResource("2_fy7op")
+base_player_sprite = ExtResource("3_plqpm")
+
+[node name="TriggerTimer" type="Timer" parent="." unique_id=1265008898]
+one_shot = true

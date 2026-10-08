@@ -31,6 +31,8 @@ func apply_effect(given_egg: EggData) -> void:
 			set_physical_effect(given_egg)
 		EggData.EggType.STAT_EFFECT:
 			set_stat_effect(given_egg)
+		EggData.EggType.TRIGGER_EFFECT:
+			set_trigger_effect(given_egg)
 		
 
 func set_stat_effect(given_egg: EggData) -> void:
@@ -58,7 +60,17 @@ func set_physical_effect(given_egg: EggData) -> void:
 		EggData.EggPhysicalEffect.FAMILIAR:
 			print("Egg has added a Familiar")
 		EggData.EggPhysicalEffect.PERIODIC_SHOOTER:
+			var temp_holder = given_egg.physical_effect_scene.instantiate()
+			var tree = Engine.get_main_loop() as SceneTree
+			tree.current_scene.add_child(temp_holder)
+			active_physical_nodes.append(temp_holder)
 			print("Egg has added a Shooter!")
+			
+func set_trigger_effect(given_egg: EggData) -> void:
+	var temp_holder = given_egg.trigger_effect_scene.instantiate()
+	var tree = Engine.get_main_loop() as SceneTree
+	tree.current_scene.add_child(temp_holder)
+	active_physical_nodes.append(temp_holder)
 
 #This Function is called when the Player takes damage.
 func remove_egg() -> void:
@@ -69,7 +81,6 @@ func remove_egg() -> void:
 		EggData.EggType.PHYSICAL_EFFECT:
 			remove_physical_effect(temp_egg_holder)
 	current_eggs_held.pop_front()
-	print(current_eggs_held.size())
 
 #Function is called via remove_egg() if Eggtype is STAT_EFFECT
 func remove_stat_effect(egg: EggData) -> void:
@@ -99,6 +110,24 @@ func remove_physical_effect(egg: EggData) -> void:
 		var node_to_remove = active_physical_nodes.pop_front()
 		if is_instance_valid(node_to_remove):
 			node_to_remove.queue_free()
-	
+
+#Adding buffs via any Trigger Effect
+func give_trigger_buff(buff_name: String, buff_value: float) -> void:
+	match buff_name:
+		"SPEED":
+			current_player_speed = current_player_speed + (current_player_speed * buff_value)
+			egg_speed_mutiplier += buff_value
+		"DAMAGE":
+			egg_damage_mutiplier += buff_value
+
+#Removing buffs from any Trigger effect
+func remove_trigger_buff(buff_name: String, buff_value: float) -> void:
+	match buff_name:
+		"SPEED":
+			current_player_speed = current_player_speed / (1.0 + buff_value)
+			egg_speed_mutiplier -= buff_value
+		"DAMAGE":
+			egg_damage_mutiplier -= buff_value
+
 func heal(amount: int) -> void:
 	current_player_health += amount

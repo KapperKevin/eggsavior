@@ -14,6 +14,7 @@ func _physics_process(delta: float) -> void:
 		var collider = collision.get_collider()
 		if collider.is_in_group("enemy"):
 			collider.take_damage(on_hit_damage)
+			GameEvents.player_dealt_damage.emit(on_hit_damage)
 			queue_free()
 		
 		if collider is StaticBody2D or collider is TileMapLayer:

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b17b7j4pl5iua"]
+
+[ext_resource type="Script" uid="uid://owd0rxmgyr8x" path="res://Scripts/frost_egg_attack.gd" id="1_mj28s"]
+[ext_resource type="PackedScene" uid="uid://bmhld3gxvtdix" path="res://Scenes/Projectiles/icicle.tscn" id="2_yfj14"]
+
+[node name="FrostEggAttack" type="Node2D" unique_id=103852917]
+script = ExtResource("1_mj28s")
+icicle_scene = ExtResource("2_yfj14")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1484766412]
+one_shot = true

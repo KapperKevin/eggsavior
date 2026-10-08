@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bmhld3gxvtdix"]
+
+[ext_resource type="Script" uid="uid://c0ak451upbt4x" path="res://Scripts/icicle.gd" id="1_bycpc"]
+[ext_resource type="Texture2D" uid="uid://cga2ewmqryvy7" path="res://Assets/IcicleProjectile.png" id="1_c13g0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(14, 10)
+
+[node name="Icicle" type="CharacterBody2D" unique_id=68281657]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_bycpc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1041152626]
+texture = ExtResource("1_c13g0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=107851643]
+shape = SubResource("RectangleShape2D_g4v7s")

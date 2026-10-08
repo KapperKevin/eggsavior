@@ -1,7 +1,7 @@
 class_name EggData
 extends Resource
 
-enum EggType {STAT_EFFECT, PHYSICAL_EFFECT}
+enum EggType {STAT_EFFECT, PHYSICAL_EFFECT, TRIGGER_EFFECT}
 enum EggRarity {COMMON, RARE, MYTHIC, QUEST, CURSED}
 enum EggStatEffect {NONE, SPEED, DAMAGE}
 enum EggPhysicalEffect { NONE, ORBITAL, FAMILIAR, PERIODIC_SHOOTER }
@@ -22,3 +22,6 @@ enum EggPhysicalEffect { NONE, ORBITAL, FAMILIAR, PERIODIC_SHOOTER }
 @export_category("Physical Effect Settings")
 @export var physical_effect: EggPhysicalEffect = EggPhysicalEffect.NONE
 @export var physical_effect_scene: PackedScene
+
+@export_category("Trigger Effect Settings")
+@export var trigger_effect_scene: PackedScene

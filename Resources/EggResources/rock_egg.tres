@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://o1v5qccumhm0" path="res://Assets/Textures/Eggs/RockEgg.png" id="1_00m2h"]
 [ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="1_cn84n"]
-[ext_resource type="PackedScene" uid="uid://cwo0nypua2dk2" path="res://Scenes/Entities/orbital.tscn" id="2_al8gu"]
+[ext_resource type="PackedScene" uid="uid://cwo0nypua2dk2" path="res://Scenes/Projectiles/orbital.tscn" id="2_al8gu"]
 
 [resource]
 script = ExtResource("1_cn84n")
