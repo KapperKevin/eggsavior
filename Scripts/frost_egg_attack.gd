@@ -5,6 +5,8 @@ extends Node2D
 @export var icicle_damage: int = 5
 @onready var attack_timer: Timer = $AttackTimer
 
+var current_stacks: int = 1
+
 var player: Node2D = null
 var count = 8
 # Called when the node enters the scene tree for the first time.
@@ -39,4 +41,11 @@ func fire() -> void:
 	
 func can_fire() -> bool:
 	return attack_timer.is_stopped()
-		
+
+func add_stack() -> void:
+	current_stacks += 1
+	attack_timer.wait_time -= 0.5
+	
+func remove_stack() -> void:
+	current_stacks -= 1
+	attack_timer.wait_time += 0.5

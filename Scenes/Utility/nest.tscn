@@ -9,4 +9,4 @@ texture_filter = 1
 texture = ExtResource("1_ti3yk")
 
 [node name="EggSpawnMarkers" type="Marker2D" parent="." unique_id=662378591 groups=["egg_markers"]]
-position = Vector2(0, -1)
+position = Vector2(0, -4)

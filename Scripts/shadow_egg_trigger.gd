@@ -7,6 +7,7 @@ extends Node2D
 @export var base_player_sprite: Texture2D 
 
 var current_charge: int = 0
+var current_stacks: int = 1
 
 @onready var trigger_timer: Timer = $TriggerTimer
 
@@ -52,3 +53,17 @@ func end_shadow_state() -> void:
 	# Remove the temporary stat boosts
 	player.stats.remove_trigger_buff("SPEED", speed_boost_multiplier)
 	player.stats.remove_trigger_buff("DAMAGE", damage_boost_multiplier)
+
+
+func add_stack() -> void:
+	current_stacks += 1
+	print("Shadow Egg stacked! Total stacks: ", current_stacks)
+	speed_boost_multiplier = speed_boost_multiplier + (float(current_stacks) /8.0)
+	damage_boost_multiplier = damage_boost_multiplier + (float(current_stacks) /8.0)
+
+# This is called by PlayerData when egg is being removed
+func remove_stack() -> void:
+	current_stacks -= 1
+	speed_boost_multiplier = speed_boost_multiplier - (float(current_stacks) /8.0)
+	damage_boost_multiplier = damage_boost_multiplier - (float(current_stacks) /8.0)
+	print("Shadow Egg stack lost! Remaining stacks: ", current_stacks)

@@ -20,7 +20,7 @@ extends Resource
 
 @export_category("Eggs")
 @export var current_eggs_held: Array[EggData] = []
-var active_physical_nodes: Array[Node2D] = []
+var active_effect_nodes: Dictionary = {}
 
 #This Function is only called when an Egg is Collected.
 func apply_effect(given_egg: EggData) -> void:
@@ -28,11 +28,25 @@ func apply_effect(given_egg: EggData) -> void:
 	current_eggs_held.append(given_egg)
 	match given_egg.effect_type:
 		EggData.EggType.PHYSICAL_EFFECT:
-			set_physical_effect(given_egg)
+			if active_effect_nodes.has(given_egg):
+				# IT ALREADY EXISTS: Just upgrade/add a stack!
+				active_effect_nodes[given_egg]["stacks"] += 1
+				var active_node = active_effect_nodes[given_egg]["node"]
+				if active_node.has_method("add_stack"):
+					active_node.add_stack()
+			else:
+				set_physical_effect(given_egg)
 		EggData.EggType.STAT_EFFECT:
 			set_stat_effect(given_egg)
 		EggData.EggType.TRIGGER_EFFECT:
-			set_trigger_effect(given_egg)
+			if active_effect_nodes.has(given_egg):
+				# IT ALREADY EXISTS: Just upgrade/add a stack!
+				active_effect_nodes[given_egg]["stacks"] += 1
+				var active_node = active_effect_nodes[given_egg]["node"]
+				if active_node.has_method("add_stack"):
+					active_node.add_stack()
+			else:
+				set_trigger_effect(given_egg)
 		
 
 func set_stat_effect(given_egg: EggData) -> void:
@@ -51,26 +65,24 @@ func set_physical_effect(given_egg: EggData) -> void:
 	match given_egg.physical_effect:
 		EggData.EggPhysicalEffect.NONE:
 			print("This Egg has No Physical Effect!")
-		EggData.EggPhysicalEffect.ORBITAL:
+		EggData.EggPhysicalEffect.ORBITAL, EggData.EggPhysicalEffect.FAMILIAR, EggData.EggPhysicalEffect.PERIODIC_SHOOTER:
 			var temp_holder = given_egg.physical_effect_scene.instantiate()
 			var tree = Engine.get_main_loop() as SceneTree
 			tree.current_scene.add_child(temp_holder)
-			active_physical_nodes.append(temp_holder)
-			print("Egg has added an Orbital!")
-		EggData.EggPhysicalEffect.FAMILIAR:
-			print("Egg has added a Familiar")
-		EggData.EggPhysicalEffect.PERIODIC_SHOOTER:
-			var temp_holder = given_egg.physical_effect_scene.instantiate()
-			var tree = Engine.get_main_loop() as SceneTree
-			tree.current_scene.add_child(temp_holder)
-			active_physical_nodes.append(temp_holder)
-			print("Egg has added a Shooter!")
+			active_effect_nodes[given_egg] = {
+					"node": temp_holder,
+					"stacks": 1
+				}
+			print("Added Physical Effect")
 			
 func set_trigger_effect(given_egg: EggData) -> void:
 	var temp_holder = given_egg.trigger_effect_scene.instantiate()
 	var tree = Engine.get_main_loop() as SceneTree
 	tree.current_scene.add_child(temp_holder)
-	active_physical_nodes.append(temp_holder)
+	active_effect_nodes[given_egg] = {
+			"node": temp_holder,
+			"stacks": 1
+		}	
 
 #This Function is called when the Player takes damage.
 func remove_egg() -> void:
@@ -78,7 +90,7 @@ func remove_egg() -> void:
 	match temp_egg_holder.effect_type:
 		EggData.EggType.STAT_EFFECT:
 			remove_stat_effect(temp_egg_holder)
-		EggData.EggType.PHYSICAL_EFFECT:
+		EggData.EggType.PHYSICAL_EFFECT, EggData.EggType.TRIGGER_EFFECT:
 			remove_physical_effect(temp_egg_holder)
 	current_eggs_held.pop_front()
 
@@ -97,19 +109,23 @@ func remove_stat_effect(egg: EggData) -> void:
 			
 #Function is called via remove_egg() if Eggtype is PHYSICAL_EFFECT
 func remove_physical_effect(egg: EggData) -> void:
-	match egg.physical_effect:
-		EggData.EggPhysicalEffect.NONE:
-			print("Egg had no physical effect to remove")
-		EggData.EggPhysicalEffect.ORBITAL:
-			print("Lost Egg: Removed orbital")
-		EggData.EggPhysicalEffect.FAMILIAR:
-			print("Lost Egg: Removed familiar")
-		EggData.EggPhysicalEffect.PERIODIC_SHOOTER:
-			print("Lost Egg: Removed shooter")
-	if not active_physical_nodes.is_empty():
-		var node_to_remove = active_physical_nodes.pop_front()
-		if is_instance_valid(node_to_remove):
-			node_to_remove.queue_free()
+	if active_effect_nodes.has(egg):
+				# Reduce the stack count
+		active_effect_nodes[egg]["stacks"] -= 1
+		var active_node = active_effect_nodes[egg]["node"]
+				
+				# Inform the node a stack was lost
+		if active_node.has_method("remove_stack"):
+			active_node.remove_stack()
+					
+				# IF STACKS HIT ZERO: Clean it up from the world entirely!
+		if active_effect_nodes[egg]["stacks"] <= 0:
+			if is_instance_valid(active_node):
+				active_node.queue_free()
+				active_effect_nodes.erase(egg)
+				print("All stacks removed. Effect node destroyed.")
+		else:
+			print("Stack removed. Remaining stacks: ", active_effect_nodes[egg]["stacks"])
 
 #Adding buffs via any Trigger Effect
 func give_trigger_buff(buff_name: String, buff_value: float) -> void:

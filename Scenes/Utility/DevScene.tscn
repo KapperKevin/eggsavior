@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bb5rneh6xar5c" path="res://Scenes/Entities/player.tscn" id="1_5luyr"]
 [ext_resource type="PackedScene" uid="uid://cq5at4ktvgple" path="res://Scenes/Utility/egg_spawner_controller.tscn" id="2_sdd4j"]
+[ext_resource type="Resource" uid="uid://c4pf4tpyu8ic0" path="res://Resources/EggResources/rock_egg.tres" id="9_5luyr"]
 [ext_resource type="PackedScene" uid="uid://c7r3a1uf6bla4" path="res://Scenes/Entities/Egg.tscn" id="9_17emk"]
 [ext_resource type="PackedScene" uid="uid://sy2muw1v8qsy" path="res://Scenes/Entities/betaWall.tscn" id="10_uuv3k"]
 [ext_resource type="PackedScene" uid="uid://bxlevake1ck3p" path="res://Scenes/Entities/snake.tscn" id="12_arqs3"]
@@ -78,5 +79,13 @@ position = Vector2(-87, -76)
 
 [node name="Nest9" parent="." unique_id=1743936099 instance=ExtResource("14_u8hfp")]
 position = Vector2(-81, 66)
+
+[node name="Egg" parent="." unique_id=1007391378 instance=ExtResource("9_17emk")]
+position = Vector2(-86, -134)
+possible_egg = ExtResource("9_5luyr")
+
+[node name="Egg2" parent="." unique_id=1740544765 instance=ExtResource("9_17emk")]
+position = Vector2(-45, -133)
+possible_egg = ExtResource("9_5luyr")
 
 [connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]
