@@ -31,7 +31,7 @@ func shooting() -> void:
 	
 	#Adds Necessary Effects to Bullet
 	projectile.current_bounces = pistol_data.bullet_bounces
-	var final_damage = pistol_data.gun_damage + (pistol_data.gun_damage * players_stats.egg_damage_mutiplier)
+	var final_damage = pistol_data.gun_damage + (pistol_data.gun_damage * players_stats.egg_damage_multiplier)
 	projectile.on_hit_damage = final_damage
 	
 	#Spawns and puts velocity into bullet projectile

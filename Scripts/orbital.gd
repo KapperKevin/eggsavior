@@ -26,8 +26,8 @@ func _process(delta: float) -> void:
 	# Rotate the base angle over time
 	base_angle += rotation_speed * delta
 	
+	
 	# ONLY the first item in the array calculates and updates positions for EVERYONE, 
-	# preventing math conflicts!
 	if active_orbitals.is_empty() or active_orbitals[0] != self:
 		return
 		
@@ -64,4 +64,6 @@ func _exit_tree() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"): # Or check for a specific damage function
 		if body.has_method("take_damage"):
-			body.take_damage(damage)
+			#Scale Damage with any player multipliers
+			var final_damage = damage + (damage * player.stats.egg_damage_multiplier)
+			body.take_damage(final_damage)

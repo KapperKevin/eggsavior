@@ -33,7 +33,8 @@ func fire() -> void:
 		var spawn_dir = Vector2(cos(angle), sin(angle))
 		
 		var icicle = icicle_scene.instantiate()
-		icicle.on_hit_damage = icicle_damage
+		var final_damage = icicle_damage + (icicle_damage * player.stats.egg_damage_multiplier)
+		icicle.on_hit_damage = final_damage
 		icicle.global_position = player.global_position # Positioned at the spawner
 		icicle.direction = spawn_dir # Pass the direction vector to the projectile
 		icicle.velocity = spawn_dir * icicle_speed

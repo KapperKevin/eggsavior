@@ -14,8 +14,8 @@ extends Resource
 @export var current_immunity_frames: float = 0.5
 
 @export_category("Active Buffs From Eggs")
-@export var egg_damage_mutiplier: float = 0
-@export var egg_speed_mutiplier: float = 0
+@export var egg_damage_multiplier: float = 0
+@export var egg_speed_multiplier: float = 0
 @export var egg_extra_hitpoints: float = 0
 
 @export_category("Eggs")
@@ -55,11 +55,11 @@ func set_stat_effect(given_egg: EggData) -> void:
 			print("This Egg has no Stat effect!")
 		EggData.EggStatEffect.SPEED:
 			current_player_speed = current_player_speed + (current_player_speed * given_egg.stat_effect)
-			egg_speed_mutiplier += given_egg.stat_effect
-			print("Egg has updated Speed! Mutiplier: ", egg_speed_mutiplier)
+			egg_speed_multiplier += given_egg.stat_effect
+			print("Egg has updated Speed! multiplier: ", egg_speed_multiplier)
 		EggData.EggStatEffect.DAMAGE:
-			egg_damage_mutiplier += given_egg.stat_effect
-			print("Egg has updated Damage! Mutiplier: ", egg_damage_mutiplier)
+			egg_damage_multiplier += given_egg.stat_effect
+			print("Egg has updated Damage! multiplier: ", egg_damage_multiplier)
 
 func set_physical_effect(given_egg: EggData) -> void:
 	match given_egg.physical_effect:
@@ -101,10 +101,10 @@ func remove_stat_effect(egg: EggData) -> void:
 			print("Removed No Stat Effect. Egg had None")
 		EggData.EggStatEffect.SPEED:
 			current_player_speed = current_player_speed / (1.0 + egg.stat_effect)
-			egg_speed_mutiplier -= egg.stat_effect
+			egg_speed_multiplier -= egg.stat_effect
 			print("Lost Egg: Speed has Been Reduced by: ", egg.stat_effect)
 		EggData.EggStatEffect.DAMAGE:
-			egg_damage_mutiplier -= egg.stat_effect
+			egg_damage_multiplier -= egg.stat_effect
 			print("Lost Egg: Damage Reduced by: ", egg.stat_effect)
 			
 #Function is called via remove_egg() if Eggtype is PHYSICAL_EFFECT
@@ -132,18 +132,18 @@ func give_trigger_buff(buff_name: String, buff_value: float) -> void:
 	match buff_name:
 		"SPEED":
 			current_player_speed = current_player_speed + (current_player_speed * buff_value)
-			egg_speed_mutiplier += buff_value
+			egg_speed_multiplier += buff_value
 		"DAMAGE":
-			egg_damage_mutiplier += buff_value
+			egg_damage_multiplier += buff_value
 
 #Removing buffs from any Trigger effect
 func remove_trigger_buff(buff_name: String, buff_value: float) -> void:
 	match buff_name:
 		"SPEED":
 			current_player_speed = current_player_speed / (1.0 + buff_value)
-			egg_speed_mutiplier -= buff_value
+			egg_speed_multiplier -= buff_value
 		"DAMAGE":
-			egg_damage_mutiplier -= buff_value
+			egg_damage_multiplier -= buff_value
 
 func heal(amount: int) -> void:
 	current_player_health += amount

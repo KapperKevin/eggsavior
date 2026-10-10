@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c5em0knxdavyk"]
+
+[ext_resource type="Script" uid="uid://cmgw4d1cwrhga" path="res://Scripts/Data/EnemyData.gd" id="1_a3f6y"]
+[ext_resource type="Texture2D" uid="uid://dse2i4xmnhi7u" path="res://Assets/Textures/EnemyTextures/Snake.png" id="1_gyu2u"]
+
+[resource]
+script = ExtResource("1_a3f6y")
+enemy_hitpoints = 9999999
+enemy_name = "Training Dummy"
+enemy_sprite = ExtResource("1_gyu2u")
+metadata/_custom_type_script = "uid://cmgw4d1cwrhga"
