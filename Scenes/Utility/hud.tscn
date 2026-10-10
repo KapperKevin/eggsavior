@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ccpb1r50a651r" path="res://Scripts/hud.gd" id="1_bx6g7"]
 [ext_resource type="Texture2D" uid="uid://d3qbsxd2rntjf" path="res://Assets/Textures/HeartEggContainers.png" id="1_nasa4"]
 [ext_resource type="Resource" uid="uid://dv50lx154larp" path="res://Resources/player.tres" id="2_d5rtq"]
+[ext_resource type="Texture2D" uid="uid://icwagq1prvmg" path="res://Assets/goldcoin.png" id="4_vw7lh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5rtq"]
 atlas = ExtResource("1_nasa4")
@@ -52,3 +53,21 @@ texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = SubResource("AtlasTexture_yf5fn")
+
+[node name="GoldCounter" type="HBoxContainer" parent="Control" unique_id=2017816785]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_bottom = 32.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/GoldCounter" unique_id=168685482]
+layout_mode = 2
+texture = ExtResource("4_vw7lh")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Control/GoldCounter" unique_id=1772651309]
+layout_mode = 2
+text = "0"

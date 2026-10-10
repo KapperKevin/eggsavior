@@ -62,7 +62,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	#Temporay healing function
 	if event.is_action_pressed("ui_text_completion_accept") or Input.is_key_pressed(KEY_H):
 		stats.heal(2)
-		get_tree().get_first_node_in_group("hud").update_hud()
+		get_tree().get_first_node_in_group("hud").update_hearts()
 		print("Healed! Current HP: ", stats.current_player_health)
 	
 func fire_weapon() -> void:
@@ -82,7 +82,7 @@ func take_damage(damage_recieved: int) -> void:
 		update_current_stats()
 	else:
 		stats.current_player_health -= damage_recieved
-		get_tree().get_first_node_in_group("hud").update_hud()
+		get_tree().get_first_node_in_group("hud").update_hearts()
 	if stats.current_player_health <= 0:
 		print(stats.current_player_health)
 		death()

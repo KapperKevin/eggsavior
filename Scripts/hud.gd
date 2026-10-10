@@ -6,11 +6,11 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	update_hud()
+	update_hearts()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func update_hud() -> void:
+func update_hearts() -> void:
 	var hearts = heart_container.get_children()
 	
 	for i in range(hearts.size()):
