@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var damage: int = 10
-@export var rotation_speed: float = 3.0
+@export var rotation_speed: float = 2.5
 @export var orbit_radius: float = 60.0
 
 var base_angle: float = 0.0

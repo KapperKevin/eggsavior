@@ -38,4 +38,5 @@ func pick_up() -> void:
 	player_body.stats.apply_effect(possible_egg)
 	#Temporary direct Gold addition when picking up Egg. Testing that the hud works
 	get_tree().get_first_node_in_group("hud").update_gold(possible_egg.gold_value)
+	get_tree().get_first_node_in_group("hud").update_eggs(true)
 	queue_free()

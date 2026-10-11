@@ -83,3 +83,11 @@ offset_right = 40.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "0/0"
+
+[node name="EggBasket" type="HBoxContainer" parent="Control" unique_id=971086257]
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.0
+offset_top = 59.0
+offset_right = 51.0
+offset_bottom = 99.0
