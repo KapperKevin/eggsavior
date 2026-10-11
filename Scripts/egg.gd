@@ -36,5 +36,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func pick_up() -> void:
 	print("Egg collected!")
 	player_body.stats.apply_effect(possible_egg)
-	player_body.speed = player_body.stats.current_player_speed
+	#Temporary direct Gold addition when picking up Egg. Testing that the hud works
+	get_tree().get_first_node_in_group("hud").update_gold(possible_egg.gold_value)
 	queue_free()

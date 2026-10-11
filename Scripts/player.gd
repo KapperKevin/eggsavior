@@ -9,6 +9,8 @@ extends CharacterBody2D
 var weapon_spawn_node: Node2D
 var orbit_distance: float = 15.0
 var speed: float
+#Temporary
+var gold_owned: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,10 +53,6 @@ func movementLoop() -> void:
 	
 	# Move the character
 	move_and_slide()
-
-func collect_egg(egg: EggData) -> void:
-	stats.apply_effect(egg)
-	update_current_stats()
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
@@ -79,7 +77,6 @@ func take_damage(damage_recieved: int) -> void:
 		stats.egg_extra_hitpoints -= 1
 		print("You lost an Egg!")
 		stats.remove_egg()
-		update_current_stats()
 	else:
 		stats.current_player_health -= damage_recieved
 		get_tree().get_first_node_in_group("hud").update_hearts()
@@ -87,7 +84,4 @@ func take_damage(damage_recieved: int) -> void:
 		print(stats.current_player_health)
 		death()
 
-#Function is called anytime the Player needs stats updated.
-func update_current_stats() -> void:
-	speed = stats.current_player_speed
 	

@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://c3sarfqdl5aja"]
+
+[ext_resource type="PackedScene" uid="uid://bb5rneh6xar5c" path="res://Scenes/Entities/player.tscn" id="1_5luyr"]
+[ext_resource type="PackedScene" uid="uid://cq5at4ktvgple" path="res://Scenes/Utility/egg_spawner_controller.tscn" id="2_sdd4j"]
+[ext_resource type="Resource" uid="uid://c4pf4tpyu8ic0" path="res://Resources/EggResources/rock_egg.tres" id="9_5luyr"]
+[ext_resource type="PackedScene" uid="uid://c7r3a1uf6bla4" path="res://Scenes/Entities/Egg.tscn" id="9_17emk"]
+[ext_resource type="Resource" uid="uid://dj0flrvo0r3ph" path="res://Resources/EggResources/frost_egg.tres" id="10_sdd4j"]
+[ext_resource type="PackedScene" uid="uid://sy2muw1v8qsy" path="res://Scenes/Entities/betaWall.tscn" id="10_uuv3k"]
+[ext_resource type="PackedScene" uid="uid://2amrhg8kswtf" path="res://Scenes/Entities/enemy.tscn" id="11_ud61j"]
+[ext_resource type="PackedScene" uid="uid://bxlevake1ck3p" path="res://Scenes/Entities/snake.tscn" id="12_arqs3"]
+[ext_resource type="Resource" uid="uid://c5em0knxdavyk" path="res://Resources/training_dummy.tres" id="12_u8hfp"]
+[ext_resource type="PackedScene" uid="uid://s0xag6kgv4ip" path="res://Scenes/Utility/hud.tscn" id="12_ud61j"]
+[ext_resource type="PackedScene" uid="uid://bro3xeo1nf3xv" path="res://Scenes/Entities/hostile_bub.tscn" id="13_arqs3"]
+[ext_resource type="PackedScene" uid="uid://b5tiev8pyxeu8" path="res://Scenes/Utility/nest.tscn" id="14_u8hfp"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_arqs3"]
+vertices = PackedVector2Array(289.09375, -126.13281, 291.89844, 166.71094, 55.320313, 160.27344, 64.75, -120.703125, 89.546875, -128.96875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(88, -139, 299, -136, 302, 177, 45, 170, 55, -128)])
+
+[node name="DevScene" type="Node2D" unique_id=661723530]
+y_sort_enabled = true
+
+[node name="Player" parent="." unique_id=164894348 groups=["player"] instance=ExtResource("1_5luyr")]
+position = Vector2(-5, -73)
+
+[node name="Button" type="Button" parent="." unique_id=1427294397]
+offset_left = 116.0
+offset_top = 74.0
+offset_right = 252.0
+offset_bottom = 135.0
+
+[node name="EggSpawnerController" parent="." unique_id=1120494739 instance=ExtResource("2_sdd4j")]
+egg_scene = ExtResource("9_17emk")
+
+[node name="hud" parent="." unique_id=464859338 groups=["hud"] instance=ExtResource("12_ud61j")]
+
+[node name="Snake" parent="." unique_id=541319305 instance=ExtResource("12_arqs3")]
+position = Vector2(131, 2)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=104664332]
+position = Vector2(-14, -18)
+navigation_polygon = SubResource("NavigationPolygon_arqs3")
+
+[node name="HostileBub" parent="." unique_id=2144915039 instance=ExtResource("13_arqs3")]
+position = Vector2(204, -61)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1149218777]
+
+[node name="BetaWall3" parent="Walls" unique_id=1898031443 instance=ExtResource("10_uuv3k")]
+position = Vector2(64, -53)
+
+[node name="BetaWall" parent="Walls" unique_id=1937739775 instance=ExtResource("10_uuv3k")]
+position = Vector2(136, 39)
+
+[node name="BetaWall2" parent="Walls" unique_id=625318353 instance=ExtResource("10_uuv3k")]
+position = Vector2(15, 37)
+
+[node name="Nest" parent="." unique_id=362850577 instance=ExtResource("14_u8hfp")]
+position = Vector2(-227, -6)
+
+[node name="Nest2" parent="." unique_id=1671200036 instance=ExtResource("14_u8hfp")]
+position = Vector2(-226, -75)
+
+[node name="Nest3" parent="." unique_id=984281553 instance=ExtResource("14_u8hfp")]
+position = Vector2(-226, 62)
+
+[node name="Nest4" parent="." unique_id=598629143 instance=ExtResource("14_u8hfp")]
+position = Vector2(-150, -77)
+
+[node name="Nest5" parent="." unique_id=413038624 instance=ExtResource("14_u8hfp")]
+position = Vector2(-151, -7)
+
+[node name="Nest6" parent="." unique_id=1430812674 instance=ExtResource("14_u8hfp")]
+position = Vector2(-153, 66)
+
+[node name="Nest7" parent="." unique_id=2039205062 instance=ExtResource("14_u8hfp")]
+position = Vector2(-85, -5)
+
+[node name="Nest8" parent="." unique_id=1790449073 instance=ExtResource("14_u8hfp")]
+position = Vector2(-87, -76)
+
+[node name="Nest9" parent="." unique_id=1743936099 instance=ExtResource("14_u8hfp")]
+position = Vector2(-81, 66)
+
+[node name="Egg" parent="." unique_id=1007391378 instance=ExtResource("9_17emk")]
+position = Vector2(-152, -167)
+possible_egg = ExtResource("9_5luyr")
+
+[node name="Egg2" parent="." unique_id=1740544765 instance=ExtResource("9_17emk")]
+position = Vector2(-152, -131)
+possible_egg = ExtResource("9_5luyr")
+
+[node name="Egg3" parent="." unique_id=55727559 instance=ExtResource("9_17emk")]
+position = Vector2(-86, -129)
+possible_egg = ExtResource("10_sdd4j")
+
+[node name="Egg4" parent="." unique_id=879204094 instance=ExtResource("9_17emk")]
+position = Vector2(-86, -166)
+possible_egg = ExtResource("10_sdd4j")
+
+[node name="Egg5" parent="." unique_id=2084957754 instance=ExtResource("9_17emk")]
+position = Vector2(-86, -203)
+possible_egg = ExtResource("10_sdd4j")
+
+[node name="Enemy" parent="." unique_id=54595870 instance=ExtResource("11_ud61j")]
+position = Vector2(156, -191)
+spawned_enemy = ExtResource("12_u8hfp")
+
+[connection signal="pressed" from="Button" to="EggSpawnerController" method="_on_button_pressed"]

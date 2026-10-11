@@ -8,6 +8,7 @@
 script = ExtResource("1_vamn5")
 egg_name = "Frost Egg"
 egg_sprite = ExtResource("1_w5slf")
+gold_value = 15
 effect_type = 1
 physical_effect = 3
 physical_effect_scene = ExtResource("2_2d1ne")

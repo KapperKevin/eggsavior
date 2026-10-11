@@ -7,6 +7,7 @@
 script = ExtResource("2_04e5y")
 gun_damage = 5
 gun_ammo = 5
+gun_max_ammo = 5
 gun_reload_speed = 2.0
 bullet_bounces = 1
 bullet_projectile = ExtResource("1_gvyrh")

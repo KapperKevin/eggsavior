@@ -5,6 +5,7 @@ extends Resource
 @export var gun_damage: int = 1
 @export var gun_fire_rate: float = 0.5
 @export var gun_ammo: int = 1
+@export var gun_max_ammo: int = 1
 @export var gun_reload_speed: float = 1
 @export var gun_overheat: int = 0
 @export var bullet_speed: float = 200
