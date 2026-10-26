@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EggData" format=3 uid="uid://cc4oj0x8pa4qb"]
+
+[ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="1_65c2a"]
+[ext_resource type="Texture2D" uid="uid://b5c30axdknouy" path="res://Assets/Textures/NewEggs/BoreanEggBlackOutline.png" id="1_xu3fr"]
+
+[resource]
+script = ExtResource("1_65c2a")
+egg_name = "Borean Egg"
+egg_sprite = ExtResource("1_xu3fr")
+metadata/_custom_type_script = "uid://dxwlskn8mpbe2"

@@ -17,7 +17,22 @@
 [ext_resource type="Resource" uid="uid://c4pf4tpyu8ic0" path="res://Resources/EggResources/rock_egg.tres" id="15_1qx54"]
 [ext_resource type="Resource" uid="uid://beyw5sfxnlr2v" path="res://Resources/EggResources/shadow_egg.tres" id="16_dycgm"]
 [ext_resource type="Resource" uid="uid://cvr1y6x675s0c" path="res://Resources/EggResources/void_egg.tres" id="17_s5g86"]
+[ext_resource type="Resource" uid="uid://cdfcona634ufh" path="res://Resources/EggResources/dew_egg.tres" id="18_i2tdd"]
+[ext_resource type="Resource" uid="uid://vvimseb8vmw0" path="res://Resources/EggResources/tidal_egg.tres" id="19_1qx54"]
+[ext_resource type="Resource" uid="uid://bpp2coylvjb7f" path="res://Resources/EggResources/abyssal_egg.tres" id="20_dycgm"]
+[ext_resource type="Resource" uid="uid://dlvjtls5lop2d" path="res://Resources/EggResources/seed_egg.tres" id="21_s5g86"]
+[ext_resource type="Resource" uid="uid://tblc5h33o202" path="res://Resources/EggResources/growth_egg.tres" id="22_kijvh"]
+[ext_resource type="Resource" uid="uid://33tctuxe8msi" path="res://Resources/EggResources/verdant_egg.tres" id="23_un7b0"]
+[ext_resource type="Resource" uid="uid://bmnclwew805mp" path="res://Resources/EggResources/skeletal_egg.tres" id="24_xa4hr"]
+[ext_resource type="Resource" uid="uid://36myybhy1h3w" path="res://Resources/EggResources/clockwork_egg.tres" id="25_2pbk6"]
+[ext_resource type="Resource" uid="uid://p6ijbrvpysdm" path="res://Resources/EggResources/plasma_egg.tres" id="26_14uw6"]
+[ext_resource type="Resource" uid="uid://cmn8wxjqbxle8" path="res://Resources/EggResources/ghost_egg.tres" id="27_efbky"]
+[ext_resource type="Resource" uid="uid://dvyrblv8vvylu" path="res://Resources/EggResources/gemstone_egg.tres" id="28_vmqak"]
+[ext_resource type="Resource" uid="uid://63yumnrugb6g" path="res://Resources/EggResources/ember_egg.tres" id="29_b034c"]
+[ext_resource type="Resource" uid="uid://kwrnx57yf7ut" path="res://Resources/EggResources/blaze_egg.tres" id="30_no1qj"]
+[ext_resource type="Resource" uid="uid://bn76gob44i0xo" path="res://Resources/EggResources/phoenix_egg.tres" id="31_nygo3"]
+[ext_resource type="Resource" uid="uid://dnfjumb1prf8t" path="res://Resources/EggResources/eclipse_egg.tres" id="32_br80j"]
 
 [node name="EggSpawnerController" type="Node" unique_id=1120494739]
 script = ExtResource("1_8y1xl")
-all_eggs = Array[ExtResource("2_tyoxo")]([ExtResource("3_8y5q2"), ExtResource("4_yvq2f"), ExtResource("5_krng7"), ExtResource("6_006yr"), ExtResource("7_onfnu"), ExtResource("8_3e3xm"), ExtResource("9_x3j1e"), ExtResource("10_ela71"), ExtResource("11_6dtxc"), ExtResource("12_tntng"), ExtResource("13_3uk6y"), ExtResource("14_i2tdd"), ExtResource("15_1qx54"), ExtResource("16_dycgm"), ExtResource("17_s5g86")])
+all_eggs = Array[ExtResource("2_tyoxo")]([ExtResource("3_8y5q2"), ExtResource("4_yvq2f"), ExtResource("5_krng7"), ExtResource("6_006yr"), ExtResource("7_onfnu"), ExtResource("8_3e3xm"), ExtResource("9_x3j1e"), ExtResource("10_ela71"), ExtResource("11_6dtxc"), ExtResource("12_tntng"), ExtResource("13_3uk6y"), ExtResource("14_i2tdd"), ExtResource("15_1qx54"), ExtResource("16_dycgm"), ExtResource("17_s5g86"), ExtResource("18_i2tdd"), ExtResource("19_1qx54"), ExtResource("20_dycgm"), ExtResource("21_s5g86"), ExtResource("22_kijvh"), ExtResource("23_un7b0"), ExtResource("24_xa4hr"), ExtResource("25_2pbk6"), ExtResource("26_14uw6"), ExtResource("27_efbky"), ExtResource("28_vmqak"), ExtResource("29_b034c"), ExtResource("30_no1qj"), ExtResource("31_nygo3"), ExtResource("32_br80j")])
