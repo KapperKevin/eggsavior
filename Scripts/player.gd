@@ -15,7 +15,7 @@ var gold_owned: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Setting the Player's Stats
-	speed = stats.current_player_speed
+	speed = stats.base_player_speed
 	#Equiping Guns
 	if weapon_scene:
 		weapon_spawn_node = weapon_scene.instantiate()
@@ -26,6 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	#MOVING
+	speed = stats.base_player_speed * (1.0 + stats.egg_speed_multiplier)
 	movementLoop()
 	
 	#GUN ORBIT & DIRECTION
@@ -47,9 +48,9 @@ func movementLoop() -> void:
 	# Set velocity based on direction and speed
 	if direction:
 		#aba
-		velocity = direction * stats.current_player_speed
+		velocity = direction * speed
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, stats.current_player_speed)
+		velocity = velocity.move_toward(Vector2.ZERO, speed)
 	
 	# Move the character
 	move_and_slide()

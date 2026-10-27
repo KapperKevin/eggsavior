@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Egg" format=3 uid="uid://d2tomgu4aubnp"]
+[gd_resource type="Resource" script_class="EggData" format=3 uid="uid://d2tomgu4aubnp"]
 
 [ext_resource type="Texture2D" uid="uid://bahb3mrnk5801" path="res://Assets/Textures/Eggs/SwiftEgg.png" id="1_5dcs4"]
 [ext_resource type="Script" uid="uid://dxwlskn8mpbe2" path="res://Scripts/Data/egg_data.gd" id="2_xpg6s"]
@@ -9,6 +9,7 @@ egg_name = "Swift Egg"
 egg_sprite = ExtResource("1_5dcs4")
 gold_value = 10
 rep_value = 10
-stat_effect = 0.2
-effect = 1
+effect_type = 1
+speed_magnitude = 0.2
+stat_effect_type = 1
 metadata/_custom_type_script = "uid://dxwlskn8mpbe2"

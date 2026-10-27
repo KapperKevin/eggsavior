@@ -8,6 +8,8 @@ extends Node2D
 
 var current_charge: int = 0
 var current_stacks: int = 1
+var active_damage_buff: float = 0
+var active_speed_buff: float = 0
 
 @onready var trigger_timer: Timer = $TriggerTimer
 
@@ -37,9 +39,14 @@ func trigger_shadow_state() -> void:
 	current_charge = 0
 	print("--- SHADOW STATE ACTIVATED ---")
 	player.get_node("Sprite2D").texture = shadow_sprite
+	#Pass these values into seperate variables to prevent Edge Case Issues
+	#(Picking up A Shadow Egg during Shadow State would mess with Buffs.)
+	active_damage_buff = damage_boost_multiplier
+	active_speed_buff = speed_boost_multiplier
+	
 	# Apply temporary stat boosts to PlayerStats
-	player.stats.give_trigger_buff("SPEED", speed_boost_multiplier)
-	player.stats.give_trigger_buff("DAMAGE", damage_boost_multiplier)
+	player.stats.give_trigger_buff("SPEED", active_speed_buff)
+	player.stats.give_trigger_buff("DAMAGE", active_damage_buff)
 	
 	#Duration of Shadow State
 	trigger_timer.start()
@@ -51,8 +58,8 @@ func end_shadow_state() -> void:
 	print("--- SHADOW STATE WORE OFF ---")
 	player.get_node("Sprite2D").texture = base_player_sprite
 	# Remove the temporary stat boosts
-	player.stats.remove_trigger_buff("SPEED", speed_boost_multiplier)
-	player.stats.remove_trigger_buff("DAMAGE", damage_boost_multiplier)
+	player.stats.remove_trigger_buff("SPEED", active_speed_buff)
+	player.stats.remove_trigger_buff("DAMAGE", active_damage_buff)
 
 
 func add_stack() -> void:

@@ -10,7 +10,6 @@ extends Resource
 @export var current_player_health: int = 6:
 		set(value):
 			current_player_health = clamp(value, 0, base_player_health)
-@export var current_player_speed: float = 100.0
 @export var current_immunity_frames: float = 0.5
 
 @export_category("Active Buffs From Eggs")
@@ -26,63 +25,51 @@ var active_effect_nodes: Dictionary = {}
 func apply_effect(given_egg: EggData) -> void:
 	egg_extra_hitpoints += given_egg.hit_point
 	current_eggs_held.append(given_egg)
-	match given_egg.effect_type:
-		EggData.EggType.PHYSICAL_EFFECT:
-			if active_effect_nodes.has(given_egg):
-				# IT ALREADY EXISTS: Just upgrade/add a stack!
-				active_effect_nodes[given_egg]["stacks"] += 1
-				var active_node = active_effect_nodes[given_egg]["node"]
-				if active_node.has_method("add_stack"):
-					active_node.add_stack()
-			else:
-				set_physical_effect(given_egg)
-		EggData.EggType.STAT_EFFECT:
-			set_stat_effect(given_egg)
-		EggData.EggType.TRIGGER_EFFECT:
-			if active_effect_nodes.has(given_egg):
-				# IT ALREADY EXISTS: Just upgrade/add a stack!
-				active_effect_nodes[given_egg]["stacks"] += 1
-				var active_node = active_effect_nodes[given_egg]["node"]
-				if active_node.has_method("add_stack"):
-					active_node.add_stack()
-			else:
-				set_trigger_effect(given_egg)
+	
+	if given_egg.effect_type & EggData.EggType.STAT_EFFECT:
+		set_stat_effect(given_egg)
 		
+	if given_egg.effect_type & EggData.EggType.PHYSICAL_EFFECT:
+		handle_node_effect(given_egg, "physical")
+		
+	if given_egg.effect_type & EggData.EggType.TRIGGER_EFFECT:
+		handle_node_effect(given_egg, "trigger")
 
-func set_stat_effect(given_egg: EggData) -> void:
-	match given_egg.effect:
-		EggData.EggStatEffect.NONE:
-			print("This Egg has no Stat effect!")
-		EggData.EggStatEffect.SPEED:
-			current_player_speed = current_player_speed + (current_player_speed * given_egg.stat_effect)
-			egg_speed_multiplier += given_egg.stat_effect
-			print("Egg has updated Speed! multiplier: ", egg_speed_multiplier)
-		EggData.EggStatEffect.DAMAGE:
-			egg_damage_multiplier += given_egg.stat_effect
-			print("Egg has updated Damage! multiplier: ", egg_damage_multiplier)
-
-func set_physical_effect(given_egg: EggData) -> void:
-	match given_egg.physical_effect:
-		EggData.EggPhysicalEffect.NONE:
-			print("This Egg has No Physical Effect!")
-		EggData.EggPhysicalEffect.ORBITAL, EggData.EggPhysicalEffect.FAMILIAR, EggData.EggPhysicalEffect.PERIODIC_SHOOTER:
-			var temp_holder = given_egg.physical_effect_scene.instantiate()
+#Handles if any Egg requires a physical node to be spawned to work.
+func handle_node_effect(given_egg: EggData, effect_category: String) -> void:
+	if active_effect_nodes.has(given_egg):
+		#Egg is already held by player, therefore add a stack instead
+		active_effect_nodes[given_egg]["stacks"] += 1
+		var active_node = active_effect_nodes[given_egg]["node"]
+		if active_node.has_method("add_stack"):
+			active_node.add_stack()
+	else:
+		var scene_to_spawn: PackedScene = null
+		
+		if effect_category == "physical":
+			scene_to_spawn = given_egg.physical_effect_scene
+		elif effect_category == "trigger":
+			scene_to_spawn = given_egg.trigger_effect_scene
+			
+		if scene_to_spawn != null:
+			var temp_holder = scene_to_spawn.instantiate()
 			var tree = Engine.get_main_loop() as SceneTree
 			tree.current_scene.add_child(temp_holder)
-			active_effect_nodes[given_egg] = {
-					"node": temp_holder,
-					"stacks": 1
-				}
-			print("Added Physical Effect")
 			
-func set_trigger_effect(given_egg: EggData) -> void:
-	var temp_holder = given_egg.trigger_effect_scene.instantiate()
-	var tree = Engine.get_main_loop() as SceneTree
-	tree.current_scene.add_child(temp_holder)
-	active_effect_nodes[given_egg] = {
-			"node": temp_holder,
-			"stacks": 1
-		}	
+			active_effect_nodes[given_egg] = {
+				"node": temp_holder,
+				"stacks": 1
+			}
+			print("Spawned new node effect for: ", given_egg.egg_name)
+
+func set_stat_effect(given_egg: EggData) -> void:
+	if given_egg.stat_effect_type & EggData.EggStatEffect.SPEED:
+		egg_speed_multiplier += given_egg.speed_magnitude
+		print("Applied Speed buff: ", given_egg.speed_magnitude)
+
+	if given_egg.stat_effect_type & EggData.EggStatEffect.DAMAGE:
+		egg_damage_multiplier += given_egg.damage_magnitude
+		print("Applied Damage buff: ", given_egg.damage_magnitude)
 
 #This Function is called when the Player takes damage.
 func remove_egg() -> void:
@@ -95,17 +82,14 @@ func remove_egg() -> void:
 	current_eggs_held.pop_front()
 
 #Function is called via remove_egg() if Eggtype is STAT_EFFECT
-func remove_stat_effect(egg: EggData) -> void:
-	match egg.effect:
-		EggData.EggStatEffect.NONE:
-			print("Removed No Stat Effect. Egg had None")
-		EggData.EggStatEffect.SPEED:
-			current_player_speed = current_player_speed / (1.0 + egg.stat_effect)
-			egg_speed_multiplier -= egg.stat_effect
-			print("Lost Egg: Speed has Been Reduced by: ", egg.stat_effect)
-		EggData.EggStatEffect.DAMAGE:
-			egg_damage_multiplier -= egg.stat_effect
-			print("Lost Egg: Damage Reduced by: ", egg.stat_effect)
+func remove_stat_effect(lost_egg: EggData) -> void:
+	if lost_egg.stat_effect_type & EggData.EggStatEffect.SPEED:
+			egg_speed_multiplier -= lost_egg.speed_magnitude
+			print("Lost Egg: Speed has Been Reduced by: ", lost_egg.speed_magnitude)
+			
+	if lost_egg.stat_effect_type & EggData.EggStatEffect.DAMAGE:
+			egg_damage_multiplier -= lost_egg.damage_magnitude
+			print("Lost Egg: Damage Reduced by: ", lost_egg.damage_magnitude)
 			
 #Function is called via remove_egg() if Eggtype is PHYSICAL_EFFECT
 func remove_physical_effect(egg: EggData) -> void:
@@ -131,7 +115,6 @@ func remove_physical_effect(egg: EggData) -> void:
 func give_trigger_buff(buff_name: String, buff_value: float) -> void:
 	match buff_name:
 		"SPEED":
-			current_player_speed = current_player_speed + (current_player_speed * buff_value)
 			egg_speed_multiplier += buff_value
 		"DAMAGE":
 			egg_damage_multiplier += buff_value
@@ -140,7 +123,6 @@ func give_trigger_buff(buff_name: String, buff_value: float) -> void:
 func remove_trigger_buff(buff_name: String, buff_value: float) -> void:
 	match buff_name:
 		"SPEED":
-			current_player_speed = current_player_speed / (1.0 + buff_value)
 			egg_speed_multiplier -= buff_value
 		"DAMAGE":
 			egg_damage_multiplier -= buff_value

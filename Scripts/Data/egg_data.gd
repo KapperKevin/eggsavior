@@ -1,9 +1,20 @@
 class_name EggData
 extends Resource
 
-enum EggType {STAT_EFFECT, PHYSICAL_EFFECT, TRIGGER_EFFECT}
+#This is a BitFlag, and allows for MULTIPLE enum value to be active at once.
+enum EggType {
+	STAT_EFFECT = 1,
+	PHYSICAL_EFFECT = 2,
+	TRIGGER_EFFECT = 4
+}
 enum EggRarity {COMMON, RARE, MYTHIC, QUEST, CURSED}
-enum EggStatEffect {NONE, SPEED, DAMAGE}
+enum EggStatEffect {
+	NONE = 0,
+	SPEED = 1,
+	DAMAGE = 2,
+	FIRE_RATE = 4,
+	PROJECTILE_VELOCITY = 8
+}
 enum EggPhysicalEffect { NONE, ORBITAL, FAMILIAR, PERIODIC_SHOOTER }
 
 @export_category("Basic Information")
@@ -12,12 +23,16 @@ enum EggPhysicalEffect { NONE, ORBITAL, FAMILIAR, PERIODIC_SHOOTER }
 @export var gold_value: int = 0
 @export var rep_value: int = 0
 @export var rarity: EggRarity = EggRarity.COMMON
-@export var effect_type: EggType = EggType.STAT_EFFECT
+@export_flags("Stat Effect", "Physical Effect", "Trigger Effect") var effect_type: int = 0
 
 @export_category("Stat Effects Settings")
-@export var stat_effect: float = 0.0
+#The magnitudes are scaled in percentages. 0.2 = 20% buff | 1.0 = 100% buff | -0.2 = 20% debuff
+@export var speed_magnitude: float = 0
+@export var damage_magnitude: float = 0
+@export var fire_rate_magnitude: float = 0
+@export var projectile_velocity_magnitude: float = 0
 @export var hit_point: int = 1
-@export var effect: EggStatEffect = EggStatEffect.NONE
+@export_flags("Speed", "Damage", "Fire Rate", "Projectile Velocity") var stat_effect_type: int = 0
 
 @export_category("Physical Effect Settings")
 @export var physical_effect: EggPhysicalEffect = EggPhysicalEffect.NONE

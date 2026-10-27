@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bb5rneh6xar5c" path="res://Scenes/Entities/player.tscn" id="1_5luyr"]
 [ext_resource type="PackedScene" uid="uid://cq5at4ktvgple" path="res://Scenes/Utility/egg_spawner_controller.tscn" id="2_sdd4j"]
 [ext_resource type="PackedScene" uid="uid://c7r3a1uf6bla4" path="res://Scenes/Entities/Egg.tscn" id="9_17emk"]
-[ext_resource type="Resource" uid="uid://p6ijbrvpysdm" path="res://Resources/EggResources/plasma_egg.tres" id="9_arqs3"]
-[ext_resource type="Resource" uid="uid://dj0flrvo0r3ph" path="res://Resources/EggResources/frost_egg.tres" id="10_sdd4j"]
-[ext_resource type="Resource" uid="uid://kwrnx57yf7ut" path="res://Resources/EggResources/blaze_egg.tres" id="10_u8hfp"]
+[ext_resource type="Resource" uid="uid://d2tomgu4aubnp" path="res://Resources/EggResources/swift_egg.tres" id="9_ud61j"]
+[ext_resource type="Resource" uid="uid://ugsn31a61jwo" path="res://Resources/EggResources/devil_egg.tres" id="10_arqs3"]
 [ext_resource type="PackedScene" uid="uid://sy2muw1v8qsy" path="res://Scenes/Entities/betaWall.tscn" id="10_uuv3k"]
 [ext_resource type="PackedScene" uid="uid://2amrhg8kswtf" path="res://Scenes/Entities/enemy.tscn" id="11_ud61j"]
 [ext_resource type="PackedScene" uid="uid://bxlevake1ck3p" path="res://Scenes/Entities/snake.tscn" id="12_arqs3"]
+[ext_resource type="Resource" uid="uid://beyw5sfxnlr2v" path="res://Resources/EggResources/shadow_egg.tres" id="12_oo6ge"]
 [ext_resource type="Resource" uid="uid://c5em0knxdavyk" path="res://Resources/training_dummy.tres" id="12_u8hfp"]
 [ext_resource type="PackedScene" uid="uid://s0xag6kgv4ip" path="res://Scenes/Utility/hud.tscn" id="12_ud61j"]
 [ext_resource type="PackedScene" uid="uid://bro3xeo1nf3xv" path="res://Scenes/Entities/hostile_bub.tscn" id="13_arqs3"]
@@ -86,23 +86,23 @@ position = Vector2(-81, 66)
 
 [node name="Egg" parent="." unique_id=1007391378 instance=ExtResource("9_17emk")]
 position = Vector2(-152, -167)
-possible_egg = ExtResource("9_arqs3")
+possible_egg = ExtResource("9_ud61j")
 
 [node name="Egg2" parent="." unique_id=1740544765 instance=ExtResource("9_17emk")]
 position = Vector2(-152, -131)
-possible_egg = ExtResource("10_u8hfp")
+possible_egg = ExtResource("9_ud61j")
 
 [node name="Egg3" parent="." unique_id=55727559 instance=ExtResource("9_17emk")]
 position = Vector2(-86, -129)
-possible_egg = ExtResource("10_sdd4j")
+possible_egg = ExtResource("10_arqs3")
 
 [node name="Egg4" parent="." unique_id=879204094 instance=ExtResource("9_17emk")]
 position = Vector2(-86, -166)
-possible_egg = ExtResource("10_sdd4j")
+possible_egg = ExtResource("12_oo6ge")
 
 [node name="Egg5" parent="." unique_id=2084957754 instance=ExtResource("9_17emk")]
 position = Vector2(-86, -203)
-possible_egg = ExtResource("10_sdd4j")
+possible_egg = ExtResource("12_oo6ge")
 
 [node name="Enemy" parent="." unique_id=54595870 instance=ExtResource("11_ud61j")]
 position = Vector2(156, -191)

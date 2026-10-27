@@ -8,6 +8,6 @@
 script = ExtResource("1_p35ww")
 egg_name = "Shadow Egg"
 egg_sprite = ExtResource("1_7weke")
-effect_type = 2
+effect_type = 4
 trigger_effect_scene = ExtResource("3_2tgr1")
 metadata/_custom_type_script = "uid://dxwlskn8mpbe2"
