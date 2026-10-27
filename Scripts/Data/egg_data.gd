@@ -25,3 +25,7 @@ enum EggPhysicalEffect { NONE, ORBITAL, FAMILIAR, PERIODIC_SHOOTER }
 
 @export_category("Trigger Effect Settings")
 @export var trigger_effect_scene: PackedScene
+
+@export_category("Visual Effects")
+@export var feather_color: Color = Color.WHITE
+@export var overlay_texture: Texture2D = null

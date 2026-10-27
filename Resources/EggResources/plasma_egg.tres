@@ -7,4 +7,5 @@
 script = ExtResource("1_e4cny")
 egg_name = "Plasma Egg"
 egg_sprite = ExtResource("1_gyllr")
+feather_color = Color(0.75369465, 0.98424643, 0.957297, 1)
 metadata/_custom_type_script = "uid://dxwlskn8mpbe2"

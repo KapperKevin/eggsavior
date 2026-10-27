@@ -1,0 +1,37 @@
+extends CharacterBody2D
+
+@onready var sprite: Sprite2D = $Sprite2D
+
+var current_bounces: int
+var on_hit_damage: int
+
+
+func _physics_process(delta: float) -> void:
+	if velocity != Vector2.ZERO:
+		rotation = velocity.angle()
+		
+	# Move the bullet forward every frame based on its velocity
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		var collider = collision.get_collider()
+		if collider.is_in_group("enemy"):
+			collider.take_damage(on_hit_damage)
+			GameEvents.player_dealt_damage.emit(on_hit_damage)
+			queue_free()
+		
+		if collider is StaticBody2D or collider is TileMapLayer:
+			if current_bounces > 0:
+			# Bounce away from the wall using the collision normal
+				var normal = collision.get_normal()
+			
+				# Reflect velocity and remainder
+				velocity = velocity.bounce(normal)
+				var remainder = collision.get_remainder().bounce(normal)
+				move_and_collide(remainder)
+				current_bounces -= 1
+			else:
+				queue_free() # Out of bounces, destroy!
+
+func setup_color(tint_color: Color) -> void:
+	# Modulates the main sprite's pixels with the target color
+	sprite.self_modulate = tint_color

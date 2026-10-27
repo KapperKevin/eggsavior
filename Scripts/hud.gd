@@ -45,7 +45,8 @@ func update_gold(gold_recieved: int) -> void:
 	gold_label.text = str(current_gold)
 
 func update_ammo() -> void:
-	ammo_label.text = str(current_weapon.current_ammo) + "/" + str(current_weapon.gun_data.gun_max_ammo)
+	if current_weapon:
+		ammo_label.text = str(current_weapon.current_ammo) + "/" + str(current_weapon.gun_data.gun_max_ammo)
 
 #Called on Egg pick up or Egg loss
 func update_eggs(add_egg: bool) -> void:

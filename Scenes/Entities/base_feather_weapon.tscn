@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bwxnfchk4x5v4"]
+
+[ext_resource type="Script" uid="uid://clttpfpbfuqae" path="res://Scripts/base_feather_weapon.gd" id="1_40m5u"]
+[ext_resource type="Resource" uid="uid://c6usyr7t2381o" path="res://Resources/WeaponResources/base_feather_data.tres" id="2_uitvx"]
+[ext_resource type="Resource" uid="uid://dv50lx154larp" path="res://Resources/player.tres" id="3_3tmm0"]
+
+[node name="base_feather_weapon" type="Node2D" unique_id=2122588739]
+script = ExtResource("1_40m5u")
+gun_data = ExtResource("2_uitvx")
+players_stats = ExtResource("3_3tmm0")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1884824776]
+one_shot = true
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1110587978]

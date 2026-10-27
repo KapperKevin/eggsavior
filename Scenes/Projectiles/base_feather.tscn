@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bwdukniw7wb"]
+
+[ext_resource type="Script" uid="uid://btljwimto6sbj" path="res://Scripts/Data/base_feather.gd" id="1_bsnpn"]
+[ext_resource type="Texture2D" uid="uid://c41kh7tmcde2o" path="res://Assets/Textures/feather.png" id="1_rk2x1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(14, 6)
+
+[node name="base_feather" type="CharacterBody2D" unique_id=44127553 groups=["weapon"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_bsnpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=437677755]
+texture = ExtResource("1_rk2x1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=293517451]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_g4v7s")
