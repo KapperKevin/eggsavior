@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d26dpjkpq08xi"]
+
+[ext_resource type="Script" uid="uid://cu6qkpg044u0q" path="res://Scripts/test_dungeon_layout_generator.gd" id="1_cfu0j"]
+
+[node name="DevDungeonLayoutGenerator" type="Node2D" unique_id=168848497]
+script = ExtResource("1_cfu0j")
+loop_count = 1
